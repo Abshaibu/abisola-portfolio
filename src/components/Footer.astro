@@ -1,0 +1,111 @@
+---
+import logoDark from "../images/pngs/logo-dark.png"
+import Facebook from "../images/svgs/facebook.svg"
+import Linkedin from "../images/svgs/linkedin.svg"
+import Instagram from "../images/svgs/instagram.svg"
+import Tiktok from "../images/svgs/tiktok.svg"
+---
+
+<footer class="text">
+    <div class="container">
+            <div class="footer-nav">
+                <div class="logo">
+                    <a href="/">
+                        <img src={logoDark} alt="Abisola's logo" />
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a class="nav-link" href="/">Home</a></li>
+                        <li><a class="nav-link" href="/about-me">About me</a></li>
+                        <li><a class="nav-link" href="/press">Press</a></li>
+                        <li><a class="nav-link" href="/contact-me">Contact me</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="socials">
+                <a href="https://www.facebook.com/AbisolaKolaDaisi/" target="_blank" rel="noopener noreferrer">
+                    <img width="18px" src={Facebook} alt="Facebook" />
+                </a>
+                <a href="https://www.linkedin.com/in/abisola-kola-daisi-0b0b1b1b/" target="_blank" rel="noopener noreferrer">
+                    <img width="18px" src={Linkedin} alt="Linkedin" />
+                </a>
+                <a href="https://www.instagram.com/abi_kd/" target="_blank" rel="noopener noreferrer">
+                    <img width="18px" src={Instagram} alt="Instagram" />
+                </a>
+                <a href="https://www.tiktok.com/@abi_kd" target="_blank" rel="noopener noreferrer">
+                    <img width="18px" src={Tiktok} alt="Tiktok" />
+                </a>
+            </div>
+            <small>@Copyright Abisola Kola-Daisi</small>
+    </div>
+</footer>
+
+<style>
+
+    footer, .footer-nav {
+        display: flex;
+        align-items: center;
+    }
+
+    footer {
+        padding: 2rem 0;
+    }
+
+    p {
+        color: #373737;
+    }
+
+    .footer-nav {
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    div.logo img {
+        width: 270px;
+    }
+
+    .socials {
+        margin-left: 0.9rem;
+    }
+
+    .socials a {
+        margin-right: 0.7rem;
+        transition: all 0.25s ease-in-out;
+    }
+
+    .socials a:hover {
+        transform: translateY(-10px);
+    }
+
+    small {
+        font-size: 0.8rem;
+        display: block;
+        margin: 1rem 0 0 0.8rem;
+    }
+
+    @media screen and (max-width: 768px) {
+    .footer-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    div.logo img {
+        width: 200px;
+    }
+
+    .socials, small {
+        width: max-content;
+        margin: 0 auto;
+    }
+
+    .socials {
+        margin: 1rem auto 1.5rem;
+    }
+}
+</style>
