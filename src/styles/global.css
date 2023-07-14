@@ -33,6 +33,9 @@ a {
     font-weight: 600;
     color: #373737;
     transition: all 0.25s ease-out;
+}
+
+header li a, footer li a {
     border-bottom: 3px solid transparent;
 }
 
@@ -40,27 +43,9 @@ a.active {
     border-color: #373737;
 }
 
-a:hover {
+header a:hover, footer a:hover {
     border-color: #373737;
 }
-
-/* li a.nav-link:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #373737;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-li a.nav-link:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-} */
 
 img {
     max-width: 100%;
@@ -92,6 +77,10 @@ button {
 @media screen and (max-width: 768px) {
     a {
         font-size: 0.9rem;
+    }
+
+    div.mobile-nav a {
+        font-size: 1.1rem;
     }
 
     p {
