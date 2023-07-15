@@ -3,7 +3,35 @@ import Layout from "../layouts/Layout.astro";
 import aboutImgOne from "../images/pngs/home-about-img1.png";
 import aboutImgTwo from "../images/pngs/home-about-img2.png";
 import aboutImgThree from "../images/pngs/home-about-img3.png";
+import pressImgOne from "../images/pngs/press-img1.png";
+import pressImgTwo from "../images/pngs/press-img2.png";
+import pressImgThree from "../images/pngs/press-img3.png";
 import Card from "../components/Card.astro";
+
+const pressArticles = [
+	{ 
+		img: 'img1',
+		title: "'African luxury market has benefitted immensely from the rise of e-commerce'", body: "Her work experience has spanned the banking, oil and gas, and shipping industries before deciding to follow her passion for fashion and founded FH Luxury 2012, one of Nigeria’s leading luxury retailer brands. In this interview with TOBI AWODIPE, Abisola, who is positioning her outfit to be Africa’s foremost luxury brand, spoke on Nigeria’s emerging luxury market and how young people are driving the trend.", 
+		author: "Tobi Awodipe", 
+		date: "Feb 16, 2019", 
+		href: "/press"
+	},
+	{ 
+		img: 'img2',
+		title: "Abisola Kola-Daisi Takes Husband’s Campaign To Some Major Markets In Ibadan", body: "At the markets, Abisola Kola-Daisi told the traders that her husband was ready to serve the people and provide unprecedented good representation.", 
+		author: "Kazeem Awojoodu", 
+		date: "Feb 23, 2023", 
+		href: "/press"
+	},
+	{ 
+		img: 'img3',
+		title: "Inside the luxurious lifestyle of Oyo state Governor's daughter Abisola Kola-Daisi (photos)", 
+		body: "The beautiful daughter of Oyo state Governor Abiola Ajimobi, can be described as one expensive stylish diva to look out when it comes to fashion. Identified as, Abisola Kola-Daisi, it is safe to say that she is following her mother’s fashionable footsteps.",
+		author: "Adunni Amodeni",
+		date: "April 11, 2018", 
+		href: "/press"
+	}
+]
 ---
 
 <Layout title="Abisola | Homepage">
@@ -59,18 +87,29 @@ import Card from "../components/Card.astro";
 			</div>
 		</section>
 		<section id="press">
-			<div class="container"></div>
+			<div class="container">
+				<h2>Press</h2>
+				<div class="press-card_wrapper">
+					{pressArticles.map((article) => (<Card
+						title={article.title}
+						body={article.body}
+						author={article.author}
+						date={article.date}
+						href={article.href}
+						img={article.img}
+					/>
+				))}
+				</div>
+				<p class="explore-link"><a href="/press">Explore More</a></p>
+			</div>
 		</section>
 	</main>
 </Layout>
 
 <style>
-	h2 {
-		font-family: 'EB Garamond', sans-serif;
-		font-size: 2rem;
-		margin-bottom: 0.5rem;
+	#about-me {
+		padding: 8rem 0;
 	}
-
 	#about-me p {
 		font-size: 1rem;
 		color: #404040;
@@ -134,6 +173,51 @@ import Card from "../components/Card.astro";
 
 	#about-me a:hover {
 		border-color: transparent;
+	}
+
+	#press {
+		background-color: #404040;
+		padding: 3rem 0 2rem;
+	}
+
+	#press h2 {
+		color: #fff;
+		text-align: center;
+		margin-bottom: 2.5rem;
+	}
+
+	#press h2::after {
+		content: '';
+		position: absolute;
+		bottom: 0px;
+		width: 4%;
+		height: 3px;
+		border-radius: 2px;
+		left: 50%;
+		transform: translateX(-50%);
+		background: #fff;
+	}
+
+	.press-card_wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 2rem;
+	}
+
+	.explore-link {
+		text-align: right;
+		color: #fff;
+		margin-top: 1.8rem;
+	}
+
+	.explore-link a {
+		color: #fff;
+		font-family: "EB Garamond",sans-serif;
+		border-bottom: 3px solid #fff;
+		transition: all 0.25s ease-in-out;
+		font-weight: 600;
+		font-size: 1.2rem;
 	}
 
 	@media screen and (max-width: 1219px) {

@@ -8,7 +8,7 @@ import closeBtn from "../images/svgs/close-btn.svg"
         <div class="container">
 			<div style="width: 100%;">
             <div class="mobile-nav_header">
-            <button class="close-btn close-nav">
+            <button class="close-btn close-nav" aria-label="close button" type="button">
                 <img width="20px" src={closeBtn} alt="Close menu" />
             </button>
             <h3 class="menu-text">Menu</h3>
@@ -32,7 +32,7 @@ import closeBtn from "../images/svgs/close-btn.svg"
     </div>
 <header>
 <div class="container">
-    <button class="menu-btn" type="button">
+    <button class="menu-btn" type="button" aria-label="menu button">
             <img width="20px" src={hamburgerBtn} alt="Hamburger menu" />
     </button>
         <a class="light-logo" href="/">
@@ -54,23 +54,27 @@ import closeBtn from "../images/svgs/close-btn.svg"
 
 <style>
     header {
-        padding: 1.5rem 0;
+        padding: 1.3rem 0;
         position: absolute;
-        top: 1rem;
         z-index: 99;
         left: 0;
         width: 100%;
+    }
+
+    header.header-white {
+        background-color: #fff;
+        position: static;
     }
 
     .dark-logo {
         display: none;
     }
 
-    header.contact .dark-logo {
+    header.contact .dark-logo, .header-white .dark-logo {
         display: block;
     }
 
-    header.contact .light-logo {
+    header.contact .light-logo, .header-white .light-logo {
         display: none;
     }
 
@@ -95,15 +99,15 @@ import closeBtn from "../images/svgs/close-btn.svg"
         top: 0;
         left: 0;
         width: 100%;
-        background-color: #CCBEA3;
+        background-color: #CCBEA3 !important;
         padding: 1rem 0;
     }
 
-    header.contact .dark-logo {
+    header.contact .dark-logo, .header-white .dark-logo {
         display: none;
     }
 
-    header.contact .light-logo {
+    header.contact .light-logo, .header-white .light-logo {
         display: block;
     }
 
@@ -205,5 +209,8 @@ import closeBtn from "../images/svgs/close-btn.svg"
    
     if(window.location.href.includes('contact-me')) {
         document.querySelector("header").classList.add("contact");
-    }
+    } else if(window.location.href.includes('press') || window.location.href.includes('about-me')) {
+        console.log('press');
+        document.querySelector("header").classList.add("header-white");
+    } else {}
 </script>
