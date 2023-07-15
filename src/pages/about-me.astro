@@ -186,9 +186,9 @@ const companies = [
 
     h1 {
         font-family: "EB Garamond", sans-serif;
-        font-size: 65px;
+        font-size: clamp(30px, 5vw, 65px);
+        padding: 0.5rem 4rem;
         line-height: 1.1;
-        padding: 0 1rem;
         border: 3px solid #d3bf7a;
         border-radius: 7px;
         text-shadow: 1px 1px 1px #9e9e9e;
@@ -224,6 +224,7 @@ const companies = [
         padding: 5rem 0 0;
         display: flex;
         flex-wrap: wrap;
+        gap: 1rem;
         justify-content: space-between;
         align-items: center;
     }
@@ -245,27 +246,140 @@ const companies = [
     }
 
     .companies-wrapper {
-        display: flex;
-        gap: 4rem;
+        display: grid;
+        grid-template-columns: repeat(5, 264px);
+        gap: 3rem;
+        margin-top: 4rem;
         overflow: hidden;
+        scroll-behavior: smooth;
     }
 
     .company {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         border-radius: 0.75rem;
-        width: 400px;
         background: #fff;
+        color: #2e2e22;
         overflow: hidden;
         text-align: center;
         box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
     }
 
-
+    .company img {
+        padding: 1.5rem;
+    }
 
     .company div {
+        padding: 1rem;
         border-radius: 0.75rem;
         background: #fff5d0;
         box-shadow: 0px -2px 7px 0px rgba(0, 0, 0, 0.25);
     }
+
+    h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    .company p {
+        margin-bottom: 0;
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+
+    @media screen and (max-width: 767px) {
+        .banner-wrapper {
+            height: 200px;
+    }
+    }
+
+    @media screen and (max-width: 1247px) {
+        .texts {
+            max-width: 784px;
+            width: 100%;
+    }
+
+    .img {
+        order: 1;
+        margin-bottom: 1rem;
+    }
+
+    .container > p {
+        max-width: 784px;
+        width: 100%;
+        margin: 0 auto 1rem;
+    }
+
+    .container > p:last-child {
+        padding-bottom: 3rem;
+    }
+    }
+
+    @media screen and (max-width: 425px) {
+        .banner-wrapper {
+            height: 200px;
+            background-image: url("../images/pngs/about-me-banner-mobile.png");
+    }
+
+    h1 {
+            padding: 1rem 3rem;
+    }
+
+    .company h3 {
+            font-size: 1rem;
+        }
+
+    .company p {
+            font-size: 0.8rem !important;
+        }
+    }
+
+    @media screen and (max-width: 1023px) {
+        .companies-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .company {
+            flex-direction: row;
+            height: 127px;
+            width: 327px;
+            text-align: left;
+            gap: 1rem;
+            justify-content: start;
+        }
+
+        .company div {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .company img {
+            padding-right: 0;
+        }
+    }
 </style>
 
-<script></script>
+<script>
+    const cardContainer = document.querySelector('.companies-wrapper');
+const cards = document.querySelectorAll('.company');
+const cardWidth = cards[0].getBoundingClientRect().width;
+
+function scrollToLastCard() {
+  cardContainer.scrollLeft = (cards.length - 1) * cardWidth;
+}
+
+function scrollBack() {
+  cardContainer.scrollLeft = 0;
+}
+
+setInterval(() => {
+  scrollToLastCard();
+  setTimeout(scrollBack, 2500);
+}, 4500);
+
+</script>

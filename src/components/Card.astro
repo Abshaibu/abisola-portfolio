@@ -13,30 +13,43 @@ export interface Props {
 	author: string;
 	date: string;
 	img: string;
+	textColor: string;
 }
-const { href, title, body, author, date, img, yearsPassed } = Astro.props;
+const { href, title, body, author, date, img, yearsPassed, textColor } = Astro.props;
 ---
 
 
-	<div>
+	<div class=`article-card ${textColor}`>
 		<img src={img == 'img1' ? pressImgOne : img == 'img2' ? pressImgTwo : img == 'img3' ? pressImgThree : img == 'img4' ? pressImgFour : img == 'img5' ? pressImgFive : pressImgSix} alt="press article cover image" />
-		<h4>{title}</h4>
+		<div class="article-details"><h4>{title}</h4>
 		<p>{body}</p>
 		<p class="publish-details"><span>By {author}</span><span>{yearsPassed? '' : 'On'} {date}</span></p>
-		<a href={href}>read now</a>
+		<a href={href}>read now</a></div>
 	</div>
 <style>
-	div {
+	div.article-card {
 		padding: 1rem;
 		width: 30%;
-		min-width: 330px;
-		color: #fff;
+		min-width: 320px;
 		border: 3px solid transparent;
 		transition: border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
-	div:hover {
+	div.white {
+		color: #fff;
+	}
+
+	div.redwine {
+		color: #2e2e2e;
+	}
+
+	div.article-card:hover {
 		border-color: #fff;
+		cursor: pointer;
+	}
+
+	div.article-card.redwine:hover {
+		border-color: #2e2e2e;
 		cursor: pointer;
 	}
 
@@ -44,21 +57,38 @@ const { href, title, body, author, date, img, yearsPassed } = Astro.props;
 		padding: 0.5rem 1rem;
 		background-color: #fff;
 		color: #2e2e2e;
+		border: 2px solid #2e2e2e;
 		text-transform: capitalize;
 		font-weight: 600;
-		opacity: 0;
+		opacity: 1;
 		transition: all 0.25 ease-in-out;
 	}
 
-	div:hover a {
+	.white a {
+		border-color: #fff;
+	}
+
+	div.article-card:hover a {
 		opacity: 1;
 	}
 
-	div:hover a:hover {
+	div.article-card:hover a:hover {
 		background-color: #2e2e2e;
 		color: #fff;
 	}
-	
+
+	div.article-card.redwine:hover a {
+		border-color: #2e2e2e;
+	}
+
+	div.article-card.redwine:hover a:hover {
+		border-color: #2e2e2e;
+	}
+
+	.white a:hover {
+		border-color: #2e2e2e;
+	}
+
 	h4 {
 		margin: 0.8rem 0 0.5rem;
 		font-weight: 700;
@@ -70,9 +100,39 @@ const { href, title, body, author, date, img, yearsPassed } = Astro.props;
 
 	.publish-details {
 		display: flex;
-		margin: 0.5rem 0 0.9rem;
+		margin: 0.8rem 0 1.5rem;
 		font-weight: 600;
 		font-size: 0.8rem !important;
 		justify-content: space-between;
 	}
+
+	@media screen and (max-width: 1171px) {
+        div.article-card {
+            display: flex;
+			height: 350px;
+			width: 100%;
+			gap: 2rem;
+        }
+	}
+
+	@media screen and (max-width: 1050px) {
+		div.article-card {
+			display: block;
+			height: auto;
+			width: 30%;
+		}
+	}
+
+	@media screen and (max-width: 746px) {
+        div.article-card {
+            display: flex;
+			height: 350px;
+			width: 100%;
+			gap: 2rem;
+        }
+
+		div.article-card a {
+			display: none;
+		}
+    }
 </style>

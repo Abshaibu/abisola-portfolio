@@ -94,6 +94,7 @@ const pressArticles = [
 						date={article.date}
 						href={article.href}
 						img={article.img}
+						textColor="white"
 					/>
 				))}
 				</div>
@@ -221,9 +222,29 @@ const pressArticles = [
 		border-color: transparent;
 	}
 
+	@media screen and (max-width: 1171px) {
+		div.press-card_wrapper {
+			justify-content: center;
+		}
+	}
+
 	@media screen and (max-width: 1219px) {
 		div.about-me_texts {
 			order: -1;
+		}
+
+		#about-me a {
+			right: 50%;
+			bottom: -71px;
+			transform: translateX(55%);
+		}
+	}
+
+	@media screen and (max-width: 425px) {
+		#about-me a {
+			right: 0;
+			bottom: -51px;
+			transform: translateX(0);
 		}
 	}
 </style>

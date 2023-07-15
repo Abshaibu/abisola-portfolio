@@ -93,6 +93,7 @@ representation.
                             img={article.img}
                             title={article.title}
                             body={article.body}
+                            textColor="redwine"
                             author={article.author}
                             date={article.date}
                             href={article.href}
@@ -123,8 +124,8 @@ representation.
 
     h1 {
         font-family: "EB Garamond", sans-serif;
-        font-size: 65px;
-        padding: 0 3rem;
+        font-size: clamp(30px, 5vw, 65px);
+        padding: 0.5rem 4rem;
         line-height: 1.1;
         border: 3px solid #d3bf7a;
         border-radius: 7px;
@@ -156,6 +157,11 @@ representation.
         text-decoration: none;
     }
 
+    .texts a:hover {
+        color: #009C6D;
+        background-color: #fff;
+    }
+
     .featured-article {
         padding: 5rem 0 0;
         display: flex;
@@ -166,12 +172,13 @@ representation.
         display: flex;
         justify-content: space-between;
         gap: 2rem;
+        padding: 5rem 0;
         flex-wrap: wrap;
         color: #2E2E2E;
     }
 
-    .featured-articles h4, .featured-articles p {
-        color: #2E2E2E;
+    .featured-articles h4, .featured-articles div p {
+        color: #2E2E2E !important;
     }
 
     p {
@@ -192,6 +199,27 @@ representation.
         margin: 0 auto;
     }
 
-</style>
+    @media screen and (max-width: 1171px) {
+		div.featured-articles {
+			justify-content: center;
+		}
+	}
 
-<script></script>
+    @media screen and (max-width: 767px) {
+        .banner-wrapper {
+            height: 200px;
+    }
+    }
+
+    @media screen and (max-width: 425px) {
+        .banner-wrapper {
+            height: 200px;
+            background-image: url("../images/pngs/press-banner-mobile.png");
+    }
+
+    h1 {
+            padding: 1rem 3rem;
+    }
+    }
+
+</style>

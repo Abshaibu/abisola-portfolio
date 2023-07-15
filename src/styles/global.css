@@ -2,14 +2,6 @@
 
 @import url('https://fonts.cdnfonts.com/css/sf-ui-display?styles=16099,16100,16101,16097');
 
-:root {
-    --tertiary-color: #3A3A3A;
-    --champ-gold: #CCBEA3;
-    --white: #FFFFFF;
-    --secondary-color: #2E2E2E;
-    --primary-color: #404040;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -19,8 +11,7 @@
 
 body {
     font-family: 'SF UI Display', sans-serif;
-    font-size: 16px;
-    color: var(--primary-color);
+    color: #404040;
     background-color: #FFF;
     font-family: 'SF UI Display', sans-serif;
     font-size: 1rem;
