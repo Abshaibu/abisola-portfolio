@@ -1,26 +1,197 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import contactMeImage from "../images/pngs/contact-me-img.png";
+import campaignImg from "../images/pngs/campaign-img.png";
+import Card from '../components/Card.astro';
+const pressArticles = [
+	{ 
+		img: 'img1',
+		title: "'African luxury market has benefitted immensely from the rise of e-commerce'", body: "Her work experience has spanned the banking, oil and gas, and shipping industries before deciding to follow her passion for fashion and founded FH Luxury 2012, one of Nigeria’s leading luxury retailer brands. In this interview with TOBI AWODIPE, Abisola, who is positioning her outfit to be Africa’s foremost luxury brand, spoke on Nigeria’s emerging luxury market and how young people are driving the trend.", 
+		author: "Tobi Awodipe", 
+		date: "Feb 16, 2019", 
+		href: "/press"
+	},
+	{ 
+		img: 'img2',
+		title: "Abisola Kola-Daisi Takes Husband’s Campaign To Some Major Markets In Ibadan", body: "At the markets, Abisola Kola-Daisi told the traders that her husband was ready to serve the people and provide unprecedented good representation.", 
+		author: "Kazeem Awojoodu", 
+		date: "Feb 23, 2023", 
+		href: "/press"
+	},
+	{ 
+		img: 'img3',
+		title: "Inside the luxurious lifestyle of Oyo state Governor's daughter Abisola Kola-Daisi (photos)", 
+		body: "The beautiful daughter of Oyo state Governor Abiola Ajimobi, can be described as one expensive stylish diva to look out when it comes to fashion. Identified as, Abisola Kola-Daisi, it is safe to say that she is following her mother’s fashionable footsteps.",
+		author: "Adunni Amodeni",
+		date: "April 11, 2018", 
+		href: "/press"
+	},
+    { 
+		img: 'img4',
+		title: "Beauty and Diversity: How Lancome Connected with Africa’s Biggest Market", 
+		body: "They say beauty is in the eye of the beholder and the beauty industry is one that has all in it’s thrall, especially in the Lagos where you are only asas your last appearance. French luxury cosmetics house Lancome, are one of the first to realise the importance of tapping into the Nigerian market.",
+		author: "Mazzi Odu",
+		date: "June 21, 2021", 
+		href: "/press"
+	},
+    { 
+		img: 'img5',
+		title: "Abisola Kola-Daisi’s expensive habit", 
+		body: "The beautiful daughter of Oyo State Governor Abiola Ajimobi, Abisola Kola-Daisi, is one stylish diva to look out when it comes to expensive fashion, and it seems she is following her mother’s fashionable footsteps. The chief executive of Florence H Boutique is known for her luxury taste regards fashion items.",
+		author: "Funsho Akinwale",
+		date: "August 20, 2016", 
+		href: "/press"
+	},
+    { 
+		img: 'img6',
+		title: "Meet and read profile of the famous and eldest child of Late Ajimobi, Abisola Kola Daisi", 
+		body: "This is Abisola Kola-Daisi, born as Abisola Abiola-Ajimobi, she is the first child of Abiola Ajimobi. She was born on March 12th 1981 in Surulere, Lagos State. She is a Nigerian entrepreneur.",
+        yearsPassed: true,
+		author: "Phynofino (self media writer)",
+		date: "3 years ago", 
+		href: "/press"
+	}
+]
 ---
 
-<Layout title="Abisola | Press">
+<Layout title="Abisola | About Me">
     <main>
-        <section>About me</section>
+        <section>
+            <div class="banner-wrapper">
+                <h1>Press</h1>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="featured-article">
+                    <div class="texts">
+                        <h2>
+                            Abisola Kola-Daisi Takes Husband’s Campaign To Some
+                            Major Markets In Ibadan
+                        </h2>
+                        <p>
+                            At the markets, Abisola Kola-Daisi told the traders that her husband 
+was ready to serve the people and provide unprecedented good 
+representation.
+                        </p>
+                        <p>
+                            <span>By Kazeem Awojoodu</span>
+                            <span>On Feb 23, 2023</span>
+                        </p>
+                        <a href="#">Continue reading</a>
+                    </div>
+                    <div class="img">
+                        <img src={campaignImg} alt="group photo" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="featured-articles">
+                    {pressArticles.map((article) => (
+                        <Card
+                            img={article.img}
+                            title={article.title}
+                            body={article.body}
+                            author={article.author}
+                            date={article.date}
+                            href={article.href}
+                            yearsPassed={article.yearsPassed}
+                        />
+                    ))}
+                </div>
+            </div>
+        </section>
     </main>
 </Layout>
 
 <style>
-    section {
+    .banner-wrapper {
+        background-image: url("../images/pngs/press-banner.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 370px;
         display: flex;
-        height: 100vh;
-        border-bottom: 1px solid #373737;
-        margin-bottom: 3rem;
+        justify-content: center;
+        align-items: center;
     }
 
-    section div:first-child,
-    section div:nth-child(2) {
-        flex-basis: 50%;
+    section:nth-child(2) {
+        background-color: #404040;
+        padding: 3rem 0 5rem;
     }
+
+    h1 {
+        font-family: "EB Garamond", sans-serif;
+        font-size: 65px;
+        padding: 0 3rem;
+        line-height: 1.1;
+        border: 3px solid #d3bf7a;
+        border-radius: 7px;
+        color: #fff;
+    }
+
+    .texts h2 {
+        font-size: 1.6rem;
+        font-family: 'SF UI Display', sans-serif;
+        line-height: 1.2;
+    }
+
+    .texts p:nth-child(2) {
+        margin: 1.2rem 0 1.8rem;
+    }
+
+    .texts p:nth-child(3) {
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3.5rem;
+    }
+
+    .texts a {
+        color: #fff;
+        background-color: #009C6D;
+        font-weight: 600;
+        padding: 1rem 3rem;
+        text-decoration: none;
+    }
+
+    .featured-article {
+        padding: 5rem 0 0;
+        display: flex;
+        color: #3A3A3A;
+    }
+
+    .featured-articles {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+        color: #2E2E2E;
+    }
+
+    .featured-articles h4, .featured-articles p {
+        color: #2E2E2E;
+    }
+
+    p {
+        margin-bottom: 0.8rem;
+    }
+
+    .img {
+        width: 50%;
+    }
+    .texts {
+        width: 50%;
+        padding: 4rem;
+        background-color: #F3E8D2;
+    }
+
+    .img,
+    .texts {
+        margin: 0 auto;
+    }
+
 </style>
 
 <script></script>

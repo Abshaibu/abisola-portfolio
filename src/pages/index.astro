@@ -3,9 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import aboutImgOne from "../images/pngs/home-about-img1.png";
 import aboutImgTwo from "../images/pngs/home-about-img2.png";
 import aboutImgThree from "../images/pngs/home-about-img3.png";
-import pressImgOne from "../images/pngs/press-img1.png";
-import pressImgTwo from "../images/pngs/press-img2.png";
-import pressImgThree from "../images/pngs/press-img3.png";
 import Card from "../components/Card.astro";
 
 const pressArticles = [
@@ -190,7 +187,7 @@ const pressArticles = [
 		content: '';
 		position: absolute;
 		bottom: 0px;
-		width: 4%;
+		width: 46px;
 		height: 3px;
 		border-radius: 2px;
 		left: 50%;
@@ -218,6 +215,10 @@ const pressArticles = [
 		transition: all 0.25s ease-in-out;
 		font-weight: 600;
 		font-size: 1.2rem;
+	}
+
+	.explore-link a:hover {
+		border-color: transparent;
 	}
 
 	@media screen and (max-width: 1219px) {

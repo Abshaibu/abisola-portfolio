@@ -1,22 +1,270 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import contactMeImage from "../images/pngs/contact-me-img.png";
+import aboutMeImage from "../images/pngs/about-me-img.png";
+import grandex from "../images/pngs/grandex.png";
+import florence from "../images/pngs/florence.png";
+import tllm from "../images/pngs/tllm.png";
+import abcFoundation from "../images/pngs/abc-foundation.png";
+import akdLifestyle from "../images/pngs/akd-lifestyle.png";
+
+const companies = [
+    {
+        name: "Grandex Nigeria Ltd",
+        img: grandex,
+        role: "Managing Director",
+    },
+    {
+        name: "Florence H Luxury",
+        img: florence,
+        role: "Managing Director",
+    },
+    {
+        name: "The Luxury Lifestyle Market (TLLM)",
+        img: tllm,
+        role: "Founder",
+    },
+    {
+        name: "ABC Foundation",
+        img: abcFoundation,
+        role: "Patron Ibadan",
+    },
+    {
+        name: "AKD Lifestyle",
+        img: akdLifestyle,
+        role: "Founder",
+    },
+];
 ---
 
 <Layout title="Abisola | About Me">
     <main>
         <section>
-            <div>
+            <div class="banner-wrapper">
                 <h1>About Me</h1>
-            </div>       
+            </div>
+            <div class="container">
+                <div class="about-me_texts">
+                    <div class="img">
+                        <img
+                            src={aboutMeImage}
+                            alt="woman holding a glass of drink"
+                        />
+                    </div>
+                    <div class="texts">
+                        <p>
+                            Abisola Kola-Daisi is a highly successful
+                            Nigerian-Lebanese entrepreneur known for her
+                            contributions to the luxury retail industry and
+                            philanthropic endeavors. As the Managing Director of
+                            Grandex Nigeria Ltd, a renowned retail and wholesale
+                            chain specializing in Nigeria's heritage fast-moving
+                            consumer goods (FMCGs) since 1984, she has played a
+                            significant role in the growth and development of
+                            the company. In addition, Abisola is the founder and
+                            CEO of Florence H Luxury, a leading luxury retail
+                            fashion brand in Nigeria. Her keen business acumen
+                            and passion for fashion have driven her success and
+                            positioned her as a prominent figure in the
+                            industry.
+                        </p>
+                        <p>
+                            Abisola's work experience has spanned the banking,
+                            oil and gas and shipping sectors. Her
+                            entrepreneurial journey began in 2008 when she
+                            worked as the General Manager of Finance and
+                            Administration at Saje Shipping, a subsidiary of MRS
+                            Oil Nigeria Plc, before transitioning into the world
+                            of fashion in 2012. It was then that she founded
+                            Florence H Luxury, a multi-brand luxury boutique
+                            that quickly gained recognition as one of Nigeria's
+                            foremost luxury retail brands. The success of
+                            Florence H Luxury propelled Abisola to the forefront
+                            of the Nigerian fashion scene.
+                        </p>
+                        <p>
+                            In 2018, Abisola assumed the role of CEO at Grandex
+                            Stores, a major supermarket chain in Nigeria
+                            specializing in fast-moving consumer goods and
+                            general merchandise. Her strategic leadership and
+                            business expertise have played a pivotal role in
+                            expanding the company's reach and enhancing its
+                            brand reputation.
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    As a true entrepreneur, Abisola has diversified her ventures
+                    beyond fashion and retail. She founded 'AKD Lifestyle,' a
+                    luxury lifestyle consultancy aimed at providing exceptional
+                    experiences and services to clients. Additionally, she
+                    established 'The Luxury Lifestyle Market' (TLLM), a seasonal
+                    luxury-focused exhibition that showcases and redefines the
+                    concept of luxury in Africa. Through TLLM, Abisola aims to
+                    promote and support African brands, particularly in the
+                    fashion and luxury goods sectors.
+                </p>
+                <p>
+                    Abisola's philanthropic endeavors are a testament to her
+                    compassionate nature and commitment to making a positive
+                    impact on society. She founded the AKD Kids Foundation, a
+                    charitable organization dedicated to supporting orphans and
+                    displaced children in Nigeria. As a devoted advocate for
+                    children's welfare, Abisola strives to improve the lives of
+                    these vulnerable individuals and provide them with better
+                    opportunities for the future. Additionally, she serves as a
+                    patron of the ABC Foundation in Ibadan, actively
+                    participating in various charitable activities.
+                </p>
+                <p>
+                    Abisola's achievements and influence have garnered
+                    significant media attention. She has been featured in
+                    prominent Nigerian newspapers such as The Guardian Nigeria,
+                    Independent Newspaper, Octopus News, The Elites Nigeria, and
+                    Herald.ng. Her expertise and fashion sense have also earned
+                    her recognition in online magazines like Allure and Bella
+                    Naija Style.
+                </p>
+                <p>
+                    Beyond her professional accomplishments, Abisola is a sports
+                    enthusiast who appreciates an active lifestyle. As a loving
+                    wife to Kolapo Kola-Daisi and a devoted mother of three
+                    children, she balances her personal and professional life
+                    with grace and dedication.
+                </p>
+                <p>
+                    Abisola Kola-Daisi's remarkable journey as a luxury retail
+                    entrepreneur and philanthropist serves as an inspiration to
+                    aspiring entrepreneurs and showcases the potential for
+                    success through passion, hard work, and a commitment to
+                    making a positive impact on society
+                </p>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <h2>Companies</h2>
+                <p>
+                    Here are some of the businesses Abisola Kola-Daisi engages
+                    in
+                </p>
+                <div class="companies-wrapper">
+                    {
+                        companies.map((company) => (
+                            <div class="company">
+                                <img
+                                    src={company.img}
+                                    alt={`${company.name} logo`}
+                                />
+                                <div>
+                                    <h3>{company.name}</h3>
+                                    <p>{company.role}</p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
         </section>
     </main>
 </Layout>
 
 <style>
+    .banner-wrapper {
+        background-image: url("../images/pngs/about-me-banner.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 312px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section:nth-child(2) {
+        background-color: #404040;
+        padding: 3rem 0 5rem;
+    }
+
     h1 {
-        border: 3px solid #D3BF7A;
+        font-family: "EB Garamond", sans-serif;
+        font-size: 65px;
+        line-height: 1.1;
+        padding: 0 1rem;
+        border: 3px solid #d3bf7a;
+        border-radius: 7px;
+        text-shadow: 1px 1px 1px #9e9e9e;
         color: #636262;
+    }
+
+    h2 {
+        color: #fff;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    h2::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        width: 70px;
+        height: 3px;
+        border-radius: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #d3bf7a;
+    }
+
+    h2 + p {
+        color: #fff;
+        text-align: center;
+        margin-bottom: 3.5rem;
+        font-weight: 500;
+    }
+
+    .about-me_texts {
+        padding: 5rem 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    p {
+        margin-bottom: 0.8rem;
+    }
+
+    .img {
+        width: 624px;
+    }
+    .texts {
+        width: 43%;
+    }
+
+    .img,
+    .texts {
+        margin: 0 auto;
+    }
+
+    .companies-wrapper {
+        display: flex;
+        gap: 4rem;
+        overflow: hidden;
+    }
+
+    .company {
+        border-radius: 0.75rem;
+        width: 400px;
+        background: #fff;
+        overflow: hidden;
+        text-align: center;
+        box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    }
+
+
+
+    .company div {
+        border-radius: 0.75rem;
+        background: #fff5d0;
+        box-shadow: 0px -2px 7px 0px rgba(0, 0, 0, 0.25);
     }
 </style>
 
