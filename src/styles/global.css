@@ -73,7 +73,7 @@ button {
 
 @media screen and (max-width: 768px) {
     a {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 
     div.mobile-nav a {
