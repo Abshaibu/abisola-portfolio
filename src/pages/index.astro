@@ -272,14 +272,14 @@ const pressArticles = [
 		background: url('../images/pngs/slide-1.png') no-repeat;
 		background-size: cover;
 		background-position: -12rem 100%;
-		transition: all 1s ease;
+		transition: opacity 1s ease;
 	}
 
 	.carousel-slide.slide-two.active {
 		background: url('../images/pngs/slide-2.png') no-repeat;
 		background-size: cover;
 		background-position: -12rem 100%;
-		transition: all 0.8s ease;
+		transition: opacity 0.8s ease;
 	}
 
 	.carousel-slide.active {
@@ -481,23 +481,32 @@ const pressArticles = [
 	}
 
 	@media screen and (max-width: 768px) {
-		.carousel-slide {
+		.carousel-slide, .carousel-slide.slide-two.active {
 			background-position: -20rem 100%;
 		}
 	}
 
 	@media screen and (max-width: 767px) {
+
+		h1::after {
+			margin: 1.8rem auto 0;
+			background-color: #FBEEC1;
+		}
+
 		.carousel-slide {
 			background-image: url('../images/pngs/slide-1-mobile.png');
 			background-position: 0 100%;
+			transition: opacity 1s ease-in-out;
 		}
 
 		.dots {
 			display: none;
 		}
 
-		.carousel-slide.slide-two {
+		.carousel-slide.slide-two.active {
 			background-image: url('../images/pngs/slide-2-mobile.png');
+			background-position: 0 100%;
+			transition: opacity 1s ease-in-out; ;
 		}
 	}
 
@@ -534,9 +543,8 @@ const pressArticles = [
 			margin-bottom: 0.5rem;
 		}
 
-		h1::after {
-			margin: 1.8rem auto 0;
-			background-color: #FBEEC1;
+		h1.white::after {
+			background-color: #A69A85;
 		}
 
 		.home-texts p {
@@ -551,7 +559,7 @@ const pressArticles = [
 			width: 90px;
 		}
 
-		.carousel-slide {
+		.carousel-slide, .carousel-slide.slide-two.active {
 			background-size: contain;
 		}
 	}
@@ -613,5 +621,5 @@ const pressArticles = [
 		});
 	});
 
-	// setInterval(nextSlide, 3000);
+	setInterval(nextSlide, 3000);
 </script>
