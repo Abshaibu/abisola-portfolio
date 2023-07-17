@@ -75,16 +75,16 @@ const pressArticles = [
 						<p>follow me on:</p>
 						<div>
 							<a href="https://www.facebook.com/abisolakoladaisi">
-							<img width="18px" src={Facebook} alt="Facebook" />
+							<img width="20px" src={Facebook} alt="Facebook" />
 							</a>
 							<a href="https://www.linkedin.com/in/abisola-kola-daisi-9b1b1b1b/">
-							<img width="18px" src={Linkedin} alt="Linkedin" />
+							<img width="20px" src={Linkedin} alt="Linkedin" />
 							</a>
 							<a href="https://www.instagram.com/abi_kd/">
-								<img width="18px" src={Instagram} alt="Instagram" />
+								<img width="20px" src={Instagram} alt="Instagram" />
 							</a>
 							<a href="https://www.tiktok.com/@abi_kd?lang=en">
-								<img width="18px" src={Tiktok} alt="Tiktok" />
+								<img width="20px" src={Tiktok} alt="Tiktok" />
 							</a>
 						</div>
 					</div>
@@ -190,7 +190,7 @@ const pressArticles = [
 	}
 
 	h1 {
-		font-size: clamp(2.3rem, 5vw, 6rem);
+		font-size: clamp(2.4rem, 5vw, 6rem);
 		font-weight: 700;
 		font-family: 'EB Garamond', sans-serif;
 		line-height: 0.8;
@@ -480,6 +480,23 @@ const pressArticles = [
 		border-color: transparent;
 	}
 
+	@media screen and (max-width: 768px) {
+		.carousel-slide {
+			background-position: -20rem 100%;
+		}
+	}
+
+	@media screen and (max-width: 767px) {
+		.carousel-slide {
+			background-image: url('../images/pngs/slide-1-mobile.png');
+			background-position: 0 100%;
+		}
+
+		.carousel-slide.slide-two {
+			background-image: url('../images/pngs/slide-2-mobile.png');
+		}
+	}
+
 	@media screen and (max-width: 1171px) {
 		div.press-card_wrapper {
 			justify-content: center;
@@ -503,6 +520,10 @@ const pressArticles = [
 			right: 0;
 			bottom: -51px;
 			transform: translateX(0);
+		}
+
+		.carousel-slide {
+			background-size: contain;
 		}
 	}
 </style>
@@ -563,5 +584,5 @@ const pressArticles = [
 		});
 	});
 
-	setInterval(nextSlide, 3000);
+	// setInterval(nextSlide, 3000);
 </script>
