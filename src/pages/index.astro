@@ -166,11 +166,11 @@ const pressArticles = [
 
 <style>
 	#home {
-		min-height: 100vh;
+		height: 100vh;
 	}
 
 	div.home-content {
-		min-height: 100vh;
+		height: 90vh;
 		display: flex;
     justify-content: space-between;
     align-items: end;
@@ -254,7 +254,7 @@ const pressArticles = [
 	.carousel-container {
 		position: absolute;
 		width: 100%;
-		min-height: 100vh;
+		height: 100vh;
 		top: 0;
 		left: 0;
 		overflow: hidden;
@@ -264,7 +264,7 @@ const pressArticles = [
 	.carousel-slide {
 		position: absolute;
 		width: 100%;
-		min-height: 100vh;
+		height: 100%;
 		top: 0;
 		left: 0;
 		opacity: 0;
@@ -362,6 +362,7 @@ const pressArticles = [
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
+		width: 18px;
 	}
 
 	#about-section {
@@ -489,6 +490,9 @@ const pressArticles = [
 	}
 
 	@media screen and (max-width: 767px) {
+		.carousel-container {
+			height: calc(100vh - 100px);
+		}
 
 		h1::after {
 			margin: 1.8rem auto 0;
@@ -526,7 +530,12 @@ const pressArticles = [
 		}
 	}
 
-	@media screen and (max-width: 426px) {
+	@media screen and (max-width: 541px) {
+		.carousel-slide {
+			background-size: 515px;
+			background-position: 50% 100%;
+		}
+
 		#about-section a {
 			right: 0;
 			bottom: -51px;
@@ -534,7 +543,7 @@ const pressArticles = [
 		}
 
 		.home-texts {
-			height: 91vh;
+			height: 80vh;
 		}
 
 		h1 {
@@ -557,8 +566,12 @@ const pressArticles = [
 			width: 90px;
 		}
 
-		.carousel-slide {
-			background-size: contain;
+		.mouse {
+			transform: translateY(-35px);
+		}
+
+		.carousel-indicators {
+			transform: translateY(-20px);
 		}
 	}
 </style>
@@ -619,5 +632,5 @@ const pressArticles = [
 		});
 	});
 
-	setInterval(nextSlide, 3000);
+	// setInterval(nextSlide, 3000);
 </script>
