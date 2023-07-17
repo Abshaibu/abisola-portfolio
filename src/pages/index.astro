@@ -49,7 +49,7 @@ const pressArticles = [
 		<section id="home">
 			<div class="carousel-container">
 				<img width="215px" src={Dot} alt="" class="dots">
-				<div class="carousel-slide"></div>
+				<div class="carousel-slide slide-one"></div>
 				<div class="carousel-slide slide-two"></div>
 			</div>
 			<div class="container">
@@ -261,25 +261,26 @@ const pressArticles = [
 		transition: opacity 1s ease;
 	}
 
-	.carousel-slide,
-	.carousel-slide.slide-two {
+	.carousel-slide {
 		position: absolute;
 		width: 100%;
 		min-height: 100vh;
 		top: 0;
 		left: 0;
 		opacity: 0;
-		background: url('../images/pngs/slide-1.png') no-repeat;
+		background-repeat: no-repeat;
 		background-size: cover;
-		background-position: -12rem 100%;
+		/* background-position: -12rem 100%; */
+		background-position: left 30% bottom 0%;
 		transition: opacity 1s ease;
 	}
 
-	.carousel-slide.slide-two.active {
-		background: url('../images/pngs/slide-2.png') no-repeat;
-		background-size: cover;
-		background-position: -12rem 100%;
-		transition: opacity 0.8s ease;
+	.slide-one {
+		background-image: url('../images/pngs/slide-1.png');
+	}
+
+	.slide-two {
+		background-image: url('../images/pngs/slide-2.png');
 	}
 
 	.carousel-slide.active {
@@ -482,7 +483,8 @@ const pressArticles = [
 
 	@media screen and (max-width: 768px) {
 		.carousel-slide, .carousel-slide.slide-two.active {
-			background-position: -20rem 100%;
+			/* background-position: -20rem 100%;
+			 */
 		}
 	}
 
@@ -493,20 +495,16 @@ const pressArticles = [
 			background-color: #FBEEC1;
 		}
 
-		.carousel-slide, .carousel-slide.slide-two.active {
-			background: url('../images/pngs/slide-1-mobile.png') no-repeat;
-			background-position: 0 100%;
-			transition: opacity 1s ease-in-out;
+		.slide-one {
+			background-image: url('../images/pngs/slide-1-mobile.png');
+		}
+
+		.slide-two {
+			background-image: url('../images/pngs/slide-2-mobile.png');
 		}
 
 		.dots {
 			display: none;
-		}
-
-		.carousel-slide.slide-two.active {
-			background: url('../images/pngs/slide-2-mobile.png') no-repeat;
-			background-position: 0 100%;
-			transition: opacity 1s ease-in-out; ;
 		}
 	}
 
@@ -559,7 +557,7 @@ const pressArticles = [
 			width: 90px;
 		}
 
-		.carousel-slide, .carousel-slide.slide-two.active {
+		.carousel-slide {
 			background-size: contain;
 		}
 	}
