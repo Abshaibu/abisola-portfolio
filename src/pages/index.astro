@@ -72,8 +72,7 @@ const pressArticles = [
 						<a href="#about-section" class="mouse"></a>
 					</div>
 					<div class="side-socials">
-						<p>follow me on</p>
-						<span></span>
+						<p>follow me on:</p>
 						<div>
 							<a href="https://www.facebook.com/abisolakoladaisi">
 							<img width="18px" src={Facebook} alt="Facebook" />
@@ -293,7 +292,7 @@ const pressArticles = [
 		justify-content: center;
 		width: 20px;
 		gap: 0.5rem;
-		transform: translateY(-18px);
+		transform: translateY(-30px);
 	}
 
 	.dots {
@@ -325,6 +324,43 @@ const pressArticles = [
 		background-color: #F989E3;
 	}
 
+	.side-socials {
+		display: flex;
+		flex-direction: column;
+		transform: translateY(-30px);
+	}
+
+	.side-socials p {
+		position: absolute;
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 1.2rem;
+		left: -157px;
+    	top: -11.2rem;
+		display: flex;
+    align-items: center;
+    justify-content: center;
+	width: 330px;
+	}
+
+	.side-socials p::after {
+		content: '';
+		display: inline-block;
+		width: 150px;
+		height: 2px;
+		background-color: #404040;
+		margin-left: 0.8rem;
+	}
+
+	.side-socials p, .side-socials span {
+		transform: rotate(90deg);
+	}
+
+	.side-socials div {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
 
 	#about-section {
 		padding: 8rem 0;
