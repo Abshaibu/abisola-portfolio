@@ -76,16 +76,16 @@ const pressArticles = [
 						<span></span>
 						<div>
 							<a href="https://www.facebook.com/abisolakoladaisi">
-							<img src={Facebook} alt="Facebook" />
+							<img width="18px" src={Facebook} alt="Facebook" />
 							</a>
 							<a href="https://www.linkedin.com/in/abisola-kola-daisi-9b1b1b1b/">
-							<img src={Linkedin} alt="Linkedin" />
+							<img width="18px" src={Linkedin} alt="Linkedin" />
 							</a>
 							<a href="https://www.instagram.com/abi_kd/">
-								<img src={Instagram} alt="Instagram" />
+								<img width="18px" src={Instagram} alt="Instagram" />
 							</a>
 							<a href="https://www.tiktok.com/@abi_kd?lang=en">
-								<img src={Tiktok} alt="Tiktok" />
+								<img width="18px" src={Tiktok} alt="Tiktok" />
 							</a>
 						</div>
 					</div>
@@ -175,6 +175,7 @@ const pressArticles = [
 		display: flex;
     justify-content: space-between;
     align-items: end;
+	z-index: 5;
 	}
 
 	.home-texts {
@@ -186,13 +187,30 @@ const pressArticles = [
 	}
 
 	.home-texts div:first-child {
-		padding-bottom: 10rem;
+		padding-bottom: 17%;
 	}
 
 	h1 {
 		font-size: 6rem;
 		font-weight: 700;
 		font-family: 'EB Garamond', sans-serif;
+		line-height: 0.8;
+		margin-bottom: 3rem;
+	}
+
+	h1::after {
+		content: '';
+		display: block;
+		width: 120px;
+		height: 6px;
+		border-radius: 4px;
+		background: #A69A85;
+		margin: 1rem auto;
+		transition: all 0.8s ease-in-out;
+	}
+
+	h1.white::after {
+		background: #fff;
 	}
 
 	.home-texts p {
@@ -205,6 +223,7 @@ const pressArticles = [
 		height: 35px;
 		border-radius: 24px;
 		border: 2px solid #404040;
+		transform: translateY(-12px);
 	}
 
 	.mouse::before {
@@ -273,7 +292,8 @@ const pressArticles = [
 		flex-direction: column;
 		justify-content: center;
 		width: 20px;
-		gap: 0.5rem
+		gap: 0.5rem;
+		transform: translateY(-18px);
 	}
 
 	.dots {
@@ -459,6 +479,12 @@ const pressArticles = [
 	function showSlide(index) {
 		slideImages.forEach((img, i) => {
 			img.classList.toggle("active", i === index);
+			const h1 = document.querySelector('h1').classList
+			if(index == '0') {
+				h1.remove("white");
+			} else {
+				h1.add("white");
+			}
 		});
 	}
 
