@@ -492,6 +492,10 @@ const pressArticles = [
 			background-position: 0 100%;
 		}
 
+		.dots {
+			display: none;
+		}
+
 		.carousel-slide.slide-two {
 			background-image: url('../images/pngs/slide-2-mobile.png');
 		}
@@ -515,11 +519,36 @@ const pressArticles = [
 		}
 	}
 
-	@media screen and (max-width: 425px) {
+	@media screen and (max-width: 426px) {
 		#about-section a {
 			right: 0;
 			bottom: -51px;
 			transform: translateX(0);
+		}
+
+		.home-texts {
+			height: 91vh;
+		}
+
+		h1 {
+			margin-bottom: 0.5rem;
+		}
+
+		h1::after {
+			margin: 1.8rem auto 0;
+			background-color: #FBEEC1;
+		}
+
+		.home-texts p {
+			font-size: 1.06rem !important;
+		}
+
+		.side-socials p {
+			top: -8.2rem;
+		}
+
+		.side-socials p::after {
+			width: 90px;
 		}
 
 		.carousel-slide {

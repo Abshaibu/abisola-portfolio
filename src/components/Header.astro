@@ -125,9 +125,8 @@ import closeBtn from "../images/svgs/close-btn.svg"
         position: absolute;
         top: -100px;
         left: 0;
-        bottom: 0;
-        right: 0;
         width: 100%;
+        height: 100vh;
         background-color: #CCBEA3;
         padding: 2rem 0;
         z-index: 999;
@@ -148,13 +147,17 @@ import closeBtn from "../images/svgs/close-btn.svg"
         justify-content: space-between;
     }
 
+    .container div:first-child {
+        width: 100%;
+    }
+
     button.close-btn {
         display: block;
     }
 
     div.mobile-nav_header {
         display: flex;
-        width: 60%;
+        width: 60% !important;
         align-items: center;
         justify-content: space-between;
     }
