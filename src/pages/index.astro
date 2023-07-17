@@ -3,42 +3,96 @@ import Layout from "../layouts/Layout.astro";
 import aboutImgOne from "../images/pngs/home-about-img1.png";
 import aboutImgTwo from "../images/pngs/home-about-img2.png";
 import aboutImgThree from "../images/pngs/home-about-img3.png";
+import Facebook from "../images/svgs/facebook.svg"
+import Linkedin from "../images/svgs/linkedin.svg"
+import Instagram from "../images/svgs/instagram.svg"
+import Tiktok from "../images/svgs/tiktok.svg"
+import Dot from "../images/pngs/squared-dots.png"
 import Card from "../components/Card.astro";
 
 const pressArticles = [
-	{ 
-		img: 'img1',
-		title: "'African luxury market has benefitted immensely from the rise of e-commerce'", body: "Her work experience has spanned the banking, oil and gas, and shipping industries before deciding to follow her passion for fashion and founded FH Luxury 2012, one of Nigeria’s leading luxury retailer brands. In this interview with TOBI AWODIPE, Abisola, who is positioning her outfit to be Africa’s foremost luxury brand, spoke on Nigeria’s emerging luxury market and how young people are driving the trend.", 
-		author: "Tobi Awodipe", 
-		date: "Feb 16, 2019", 
+	{
+		img: "img1",
+		title: "'African luxury market has benefitted immensely from the rise of e-commerce'",
+		body: "Her work experience has spanned the banking, oil and gas, and shipping industries before deciding to follow her passion for fashion and founded FH Luxury 2012, one of Nigeria’s leading luxury retailer brands. In this interview with TOBI AWODIPE, Abisola, who is positioning her outfit to be Africa’s foremost luxury brand, spoke on Nigeria’s emerging luxury market and how young people are driving the trend.",
+		author: "Tobi Awodipe",
+		date: "Feb 16, 2019",
 		href: "/press",
-		mobileBody: "Her work experience has spanned thebanking, oil and gas, and shipping industries before deciding to follow her passion for fashion ..."
+		mobileBody:
+			"Her work experience has spanned thebanking, oil and gas, and shipping industries before deciding to follow her passion for fashion ...",
 	},
-	{ 
-		img: 'img2',
-		title: "Abisola Kola-Daisi Takes Husband’s Campaign To Some Major Markets In Ibadan", body: "At the markets, Abisola Kola-Daisi told the traders that her husband was ready to serve the people and provide unprecedented good representation.", 
-		author: "Kazeem Awojoodu", 
-		date: "Feb 23, 2023", 
+	{
+		img: "img2",
+		title: "Abisola Kola-Daisi Takes Husband’s Campaign To Some Major Markets In Ibadan",
+		body: "At the markets, Abisola Kola-Daisi told the traders that her husband was ready to serve the people and provide unprecedented good representation.",
+		author: "Kazeem Awojoodu",
+		date: "Feb 23, 2023",
 		href: "/press",
-		mobileBody: "At the markets, Abisola Kola-Daisi told the traders that her husband ..."
+		mobileBody:
+			"At the markets, Abisola Kola-Daisi told the traders that her husband ...",
 	},
-	{ 
-		img: 'img3',
-		title: "Inside the luxurious lifestyle of Oyo state Governor's daughter Abisola Kola-Daisi (photos)", 
+	{
+		img: "img3",
+		title: "Inside the luxurious lifestyle of Oyo state Governor's daughter Abisola Kola-Daisi (photos)",
 		body: "The beautiful daughter of Oyo state Governor Abiola Ajimobi, can be described as one expensive stylish diva to look out when it comes to fashion. Identified as, Abisola Kola-Daisi, it is safe to say that she is following her mother’s fashionable footsteps.",
 		author: "Adunni Amodeni",
-		date: "April 11, 2018", 
+		date: "April 11, 2018",
 		href: "/press",
-		mobileBody: "The beautiful daughter of Oyo state Governor Abiola Ajimobi, can be ...."
-	}
-]
+		mobileBody:
+			"The beautiful daughter of Oyo state Governor Abiola Ajimobi, can be ....",
+	},
+];
 ---
 
 <Layout title="Abisola | Homepage">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<section id="home">Home</section>
-		<section id="about-me">
+		<section id="home">
+			<div class="carousel-container">
+				<img width="215px" src={Dot} alt="" class="dots">
+				<div class="carousel-slide"></div>
+				<div class="carousel-slide slide-two"></div>
+			</div>
+			<div class="container">
+				<div class="home-content">
+					<div class="carousel-indicators">
+						<button aria-label="carousel button selector" type="button" class="gold"></button>
+						<button aria-label="carousel button selector" type="button" class="pink"></button>
+						<button aria-label="carousel button selector" type="button"></button>
+						<button aria-label="carousel button selector" type="button"></button>
+						<button aria-label="carousel button selector" type="button"></button>
+					</div>
+					<div class="home-texts">
+						<div>
+							<h1>Abisola Kola-Daisi</h1>
+							<p>
+								A Nigerian-Lebanese Luxury Retail Entrepreneur
+								and Philanthropist
+							</p>
+						</div>
+						<a href="#about-section" class="mouse"></a>
+					</div>
+					<div class="side-socials">
+						<p>follow me on</p>
+						<span></span>
+						<div>
+							<a href="https://www.facebook.com/abisolakoladaisi">
+							<img src={Facebook} alt="Facebook" />
+							</a>
+							<a href="https://www.linkedin.com/in/abisola-kola-daisi-9b1b1b1b/">
+							<img src={Linkedin} alt="Linkedin" />
+							</a>
+							<a href="https://www.instagram.com/abi_kd/">
+								<img src={Instagram} alt="Instagram" />
+							</a>
+							<a href="https://www.tiktok.com/@abi_kd?lang=en">
+								<img src={Tiktok} alt="Tiktok" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="about-section">
 			<div class="container">
 				<div class="about-me_wrapper">
 					<div class="about-me_imgs">
@@ -90,17 +144,20 @@ const pressArticles = [
 			<div class="container">
 				<h2>Press</h2>
 				<div class="press-card_wrapper">
-					{pressArticles.map((article) => (<Card
-						title={article.title}
-						body={article.body}
-						author={article.author}
-						date={article.date}
-						href={article.href}
-						mobileBody={article.mobileBody}
-						img={article.img}
-						textColor="white"
-					/>
-				))}
+					{
+						pressArticles.map((article) => (
+							<Card
+								title={article.title}
+								body={article.body}
+								author={article.author}
+								date={article.date}
+								href={article.href}
+								mobileBody={article.mobileBody}
+								img={article.img}
+								textColor="white"
+							/>
+						))
+					}
 				</div>
 				<p class="explore-link"><a href="/press">Explore More</a></p>
 			</div>
@@ -109,10 +166,150 @@ const pressArticles = [
 </Layout>
 
 <style>
-	#about-me {
+	#home {
+		min-height: 100vh;
+	}
+
+	div.home-content {
+		min-height: 100vh;
+		display: flex;
+    justify-content: space-between;
+    align-items: end;
+	}
+
+	.home-texts {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		text-align: center;
+	}
+
+	.home-texts div:first-child {
+		padding-bottom: 10rem;
+	}
+
+	h1 {
+		font-size: 6rem;
+		font-weight: 700;
+		font-family: 'EB Garamond', sans-serif;
+	}
+
+	.home-texts p {
+		font-weight: 500;
+		font-size: 1.2rem;
+	}
+
+	.mouse {
+		width: 15px;
+		height: 35px;
+		border-radius: 24px;
+		border: 2px solid #404040;
+	}
+
+	.mouse::before {
+		content: '';
+		position: absolute;
+		width: 7px;
+		height: 7px;
+		border-radius: 50%;
+		background: #404040;
+		top: 5px;
+		left: 50%;
+		transform: translateX(-50%);
+		animation: scroll 1.2s infinite;
+	}
+
+	@keyframes scroll {
+		0% {
+			opacity: 0;
+		}
+		50% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+			top: 20px;
+		}
+	}
+
+	.carousel-container {
+		position: absolute;
+		width: 100%;
+		min-height: 100vh;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		transition: opacity 0.25s ease;
+	}
+
+	.carousel-slide,
+	.carousel-slide.slide-two {
+		position: absolute;
+		width: 100%;
+		min-height: 100vh;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		background: url('../images/pngs/slide-1.png') no-repeat;
+		background-size: cover;
+		background-position: -12rem 100%;
+		transition: all 1s ease;
+	}
+
+	.carousel-slide.slide-two.active {
+		background: url('../images/pngs/slide-2.png') no-repeat;
+		background-size: cover;
+		background-position: -12rem 100%;
+		transition: all 0.8s ease;
+	}
+
+	.carousel-slide.active {
+		opacity: 1;
+	}
+
+	.carousel-indicators {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 20px;
+		gap: 0.5rem
+	}
+
+	.dots {
+		position: absolute;
+		bottom: 0;
+		left: 30%;
+		z-index: 2;
+	}
+
+	.carousel-indicators button {
+		border: none;
+		background-color: #fff;
+		border: 1px solid #868686;
+		width: 13px;
+		height: 13px;
+		border-radius: 50%;
+		margin: 0 5px;
+		cursor: pointer;
+		transition: all 1s ease;
+	}
+
+	.carousel-indicators button.active {
+		border: 2px solid #565656;
+		background-color: #FBEEC1;
+		transition: all 0.15s ease;
+	}
+
+	.carousel-indicators button.pink.active {
+		background-color: #F989E3;
+	}
+
+
+	#about-section {
 		padding: 8rem 0;
 	}
-	#about-me p {
+	#about-section p {
 		font-size: 1rem;
 		color: #404040;
 		margin-bottom: 1rem;
@@ -130,7 +327,7 @@ const pressArticles = [
 		width: 100%;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 0.35rem; 
+		gap: 0.35rem;
 		margin: 0 auto;
 	}
 
@@ -159,21 +356,21 @@ const pressArticles = [
 		height: 3px;
 		border-radius: 5px;
 		width: 50px;
-		background-color: #CCBEA3;
+		background-color: #ccbea3;
 	}
 
-	#about-me a {
-		font-family: 'EB Garamond', sans-serif;
+	#about-section a {
+		font-family: "EB Garamond", sans-serif;
 		position: absolute;
 		right: 0;
 		bottom: 0;
-		border-bottom: 3px solid #CCBEA3;
+		border-bottom: 3px solid #ccbea3;
 		transition: all 0.25s ease-in-out;
 		font-weight: 600;
 		font-size: 1.2rem;
 	}
 
-	#about-me a:hover {
+	#about-section a:hover {
 		border-color: transparent;
 	}
 
@@ -189,7 +386,7 @@ const pressArticles = [
 	}
 
 	#press h2::after {
-		content: '';
+		content: "";
 		position: absolute;
 		bottom: 0px;
 		width: 46px;
@@ -215,7 +412,7 @@ const pressArticles = [
 
 	.explore-link a {
 		color: #fff;
-		font-family: "EB Garamond",sans-serif;
+		font-family: "EB Garamond", sans-serif;
 		border-bottom: 3px solid #fff;
 		transition: all 0.25s ease-in-out;
 		font-weight: 600;
@@ -237,7 +434,7 @@ const pressArticles = [
 			order: -1;
 		}
 
-		#about-me a {
+		#about-section a {
 			right: 50%;
 			bottom: -71px;
 			transform: translateX(55%);
@@ -245,10 +442,63 @@ const pressArticles = [
 	}
 
 	@media screen and (max-width: 425px) {
-		#about-me a {
+		#about-section a {
 			right: 0;
 			bottom: -51px;
 			transform: translateX(0);
 		}
 	}
 </style>
+
+<script>
+	const slideImages = document.querySelectorAll(".carousel-slide");
+	const indicatorsContainer = document.querySelector(".carousel-indicators");
+
+	let currentIndex = 0;
+
+	function showSlide(index) {
+		slideImages.forEach((img, i) => {
+			img.classList.toggle("active", i === index);
+		});
+	}
+
+	function updateIndicator(index) {
+		const indicators = indicatorsContainer.querySelectorAll("button");
+		indicators.forEach((indicator, i) => {
+			indicator.classList.toggle("active", i === index);
+		});
+	}
+
+	function nextSlide() {
+		currentIndex = (currentIndex + 1) % slideImages.length;
+		showSlide(currentIndex);
+		updateIndicator(currentIndex);
+	}
+
+	function prevSlide() {
+		currentIndex =
+			(currentIndex - 1 + slideImages.length) % slideImages.length;
+		showSlide(currentIndex);
+		updateIndicator(currentIndex);
+	}
+
+	slideImages[currentIndex].classList.add("active");
+
+	slideImages.forEach(() => {
+		const indicator = document.createElement("button");
+		indicatorsContainer.appendChild(indicator);
+	});
+
+	const indicators = indicatorsContainer.querySelectorAll("button");
+	indicators[currentIndex].classList.add("active");
+
+	indicators.forEach((indicator, index) => {
+		indicator.addEventListener("click", () => {
+			currentIndex = index;
+			showSlide(currentIndex);
+			updateIndicator(currentIndex);
+		});
+	});
+
+	setInterval(nextSlide, 3000);
+</script>
