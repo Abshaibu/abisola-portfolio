@@ -258,7 +258,7 @@ const pressArticles = [
 		top: 0;
 		left: 0;
 		overflow: hidden;
-		transition: opacity 0.25s ease;
+		transition: opacity 1s ease-in-out;
 	}
 
 	.carousel-slide,
@@ -493,8 +493,8 @@ const pressArticles = [
 			background-color: #FBEEC1;
 		}
 
-		.carousel-slide {
-			background-image: url('../images/pngs/slide-1-mobile.png');
+		.carousel-slide, .carousel-slide.slide-two.active {
+			background: url('../images/pngs/slide-1-mobile.png') no-repeat;
 			background-position: 0 100%;
 			transition: opacity 1s ease-in-out;
 		}
@@ -504,7 +504,7 @@ const pressArticles = [
 		}
 
 		.carousel-slide.slide-two.active {
-			background-image: url('../images/pngs/slide-2-mobile.png');
+			background: url('../images/pngs/slide-2-mobile.png') no-repeat;
 			background-position: 0 100%;
 			transition: opacity 1s ease-in-out; ;
 		}

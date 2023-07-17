@@ -27,13 +27,6 @@ const { href, title, body, author, date, img, yearsPassed, textColor, mobileBody
 		<p class="publish-details"><span>By {author}</span><span>{yearsPassed? '' : 'On'} {date}</span></p>
 		<a href={href}>read now</a></div>
 	</div>
-	<div class=`article-card-mobile ${textColor}`>
-		<img src={img == 'img1' ? pressImgOne : img == 'img2' ? pressImgTwo : img == 'img3' ? pressImgThree : img == 'img4' ? pressImgFour : img == 'img5' ? pressImgFive : pressImgSix} alt="press article cover image" />
-		<div class="article-details"><h4>{title}</h4>
-		<p>{mobileBody}</p>
-		<p class="publish-details"><span>By {author}</span><span>{yearsPassed? '' : 'On'} {date}</span></p>
-		<a href={href}>read now</a></div>
-	</div>
 <style>
 	div.article-card-mobile {
 		display: none;
@@ -134,37 +127,4 @@ const { href, title, body, author, date, img, yearsPassed, textColor, mobileBody
 			width: 30%;
 		}
 	}
-
-	@media screen and (max-width: 425px) {
-		div.article-card {
-			display: none;
-		}
-
-        div.article-card-mobile {
-            display: flex;
-			height: 123px;
-			width: 100%;
-			gap: 1rem;
-        }
-
-		h4 {
-			font-size: 0.8rem;
-			line-height: 1.2;
-			margin: 0 0 0.25rem;
-		}
-
-		p {
-			font-size: 0.75rem !important;
-			line-height: 1.2;
-		}
-
-		.publish-details {
-			font-size: 0.72rem !important;
-			margin: 0.5rem 0 0;
-		}
-
-		div.article-card-mobile a {
-			display: none;
-		}
-    }
 </style>
