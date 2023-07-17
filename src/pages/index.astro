@@ -190,7 +190,7 @@ const pressArticles = [
 	}
 
 	h1 {
-		font-size: 6rem;
+		font-size: clamp(2.3rem, 5vw, 6rem);
 		font-weight: 700;
 		font-family: 'EB Garamond', sans-serif;
 		line-height: 0.8;
@@ -290,9 +290,10 @@ const pressArticles = [
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		width: 20px;
+		width: 13px;
 		gap: 0.5rem;
 		transform: translateY(-30px);
+		align-items: center;
 	}
 
 	.dots {
