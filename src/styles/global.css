@@ -30,16 +30,27 @@ a {
     transition: all 0.25s ease-out;
 }
 
-header li a, footer li a {
-    border-bottom: 3px solid transparent;
+header li a::after, footer li a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0%;
+    height: 3px;
+    border-radius: 3px;
+    background-color: transparent;
+    transition: all 0.25s ease-out;
 }
 
-a.active {
-    border-color: #373737;
+a.active::after {
+    width: 100%;
+    background-color: #373737;
 }
 
-header a:hover, footer a:hover {
-    border-color: #373737;
+header a:hover::after, footer a:hover::after {
+    background-color: #373737;
+    width: 100%;
 }
 
 img {
