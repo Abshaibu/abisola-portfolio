@@ -210,16 +210,3 @@ import contactMeImage from '../images/pngs/contact-me-img.png'
     }
 
 </style>
-
-<script>
-    const allInputs = document.querySelectorAll('.input-field');
-    const form = document.querySelector('form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        form.classList.add('submitted');
-        form.reset();
-    })
-    allInputs.forEach(input => {input.addEventListener('focus', () => {
-        form.classList.remove('submitted');
-    })})
-</script>
