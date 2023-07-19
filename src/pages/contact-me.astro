@@ -1,12 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import contactMeImage from "../images/pngs/contact-me-img.png";
+import contactMeImageMobile from "../images/pngs/contact-me-mobile.png";
 ---
 
 <Layout title="Abisola | Contact Me">
     <main>
         <section>
             <div class="img-wrapper">
+                <img class="contact-me" src={contactMeImage} alt="contact me image" />
             </div>
             <div class="form-wrapper">
                 <h1>Get in touch</h1>
@@ -51,7 +53,6 @@ import contactMeImage from "../images/pngs/contact-me-img.png";
                                 name="email"
                                 placeholder="Enter your email address"
                                 id="email"
-                                required
                             />
                         </div>
                         <div class="form-group">
@@ -106,9 +107,13 @@ import contactMeImage from "../images/pngs/contact-me-img.png";
         height: 100%;
     }
 
+    .img-wrapper img {
+        display: none;
+    }
+
     .form-wrapper {
-        max-width: 562px;
-        /* width: 78%; */
+        max-width: 100%;
+        padding-right: 11%;
     }
 
     .asterisks,
@@ -241,9 +246,12 @@ import contactMeImage from "../images/pngs/contact-me-img.png";
 
     @media screen and (max-width: 1023px) {
 
-        section {
+        div.split {
             display: block;
+        }
 
+        div.split div {
+            margin-bottom: 1rem;
         }
 
         h1 {
@@ -261,11 +269,32 @@ import contactMeImage from "../images/pngs/contact-me-img.png";
         }
     }
 
+    @media screen and (max-width: 767px) {
+        div.img-wrapper {
+            background-position: 77% center;
+        }
+    }
+
+    @media screen and (max-width: 590px) {
+        section, img.contact-me {
+            display: block;
+        }
+
+        div.form-wrapper {
+            padding-bottom: 4rem !important;
+        }
+
+        div.img-wrapper {
+            background: none;
+        }
+    }
+
     @media screen and (max-width: 426px) {
         section div.split {
             flex-direction: column;
             margin-bottom: 0;
         }
+
 
         div.split div {
             margin-bottom: 1rem;

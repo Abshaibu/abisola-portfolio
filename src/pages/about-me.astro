@@ -233,11 +233,8 @@ const companies = [
         margin-bottom: 0.8rem;
     }
 
-    .img {
-        width: 624px;
-    }
     .texts {
-        width: 43%;
+        width: 45%;
     }
 
     .img,
@@ -245,10 +242,15 @@ const companies = [
         margin: 0 auto;
     }
 
+    .img {
+        width: 50%;
+        margin-bottom: 1.5rem;
+    }
+
     .companies-wrapper {
         display: grid;
-        grid-template-columns: repeat(5, 264px);
-        gap: 3rem;
+        grid-template-columns: repeat(5, minmax(288px, 22%));
+        gap: 4rem;
         margin-top: 4rem;
         overflow: hidden;
         scroll-behavior: smooth;
@@ -310,7 +312,8 @@ const companies = [
 
     .img {
         order: 1;
-        margin-bottom: 1rem;
+        width: 790px;
+        margin-bottom: 1.5rem;
     }
 
     .container > p {

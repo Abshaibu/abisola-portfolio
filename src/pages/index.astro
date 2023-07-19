@@ -318,7 +318,7 @@ const pressArticles = [
 	.carousel-indicators button.active {
 		border: 2px solid #565656;
 		background-color: #FBEEC1;
-		transition: all 0.5s ease;
+		transition: all 0.25s ease;
 	}
 
 	.carousel-indicators button.pink.active {
@@ -420,7 +420,7 @@ const pressArticles = [
 	#about-section a {
 		font-family: "EB Garamond", sans-serif;
 		position: absolute;
-		right: 0;
+		right: 5%;
 		bottom: 0;
 		border-bottom: 3px solid #ccbea3;
 		transition: all 0.25s ease-in-out;
@@ -507,6 +507,14 @@ const pressArticles = [
 	@media screen and (max-width: 1171px) {
 		div.press-card_wrapper {
 			justify-content: center;
+		}
+	}
+
+	@media screen and (max-width: 1230px) {
+		#about-section a {
+			right: 29%;
+			bottom: -25px;
+			transform: translateX(55%);
 		}
 	}
 
