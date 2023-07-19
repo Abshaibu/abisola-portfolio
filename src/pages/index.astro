@@ -258,7 +258,7 @@ const pressArticles = [
 		top: 0;
 		left: 0;
 		overflow: hidden;
-		transition: opacity 1s ease;
+		transition: opacity 2.5s ease;
 	}
 
 	.carousel-slide {
@@ -271,7 +271,7 @@ const pressArticles = [
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: left -11rem bottom;
-		transition: opacity 1s ease;
+		transition: opacity 2.5s ease;
 	}
 
 	.slide-one {
@@ -318,7 +318,7 @@ const pressArticles = [
 	.carousel-indicators button.active {
 		border: 2px solid #565656;
 		background-color: #FBEEC1;
-		transition: all 0.15s ease;
+		transition: all 0.5s ease;
 	}
 
 	.carousel-indicators button.pink.active {
@@ -481,13 +481,6 @@ const pressArticles = [
 		border-color: transparent;
 	}
 
-	@media screen and (max-width: 768px) {
-		.carousel-slide, .carousel-slide.slide-two.active {
-			/* background-position: -20rem 100%;
-			 */
-		}
-	}
-
 	@media screen and (max-width: 767px) {
 		.carousel-container {
 			height: calc(100vh - 100px);
@@ -531,7 +524,7 @@ const pressArticles = [
 
 	@media screen and (max-width: 541px) {
 		.carousel-slide {
-			background-size: 515px;
+			background-size: 471px;
 			background-position: 50% 100%;
 		}
 
@@ -639,5 +632,5 @@ const pressArticles = [
 		});
 	});
 
-	setInterval(nextSlide, 3000);
+	setInterval(nextSlide, 6000);
 </script>
