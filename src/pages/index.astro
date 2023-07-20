@@ -3,11 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import aboutImgOne from "../images/pngs/home-about-img1.png";
 import aboutImgTwo from "../images/pngs/home-about-img2.png";
 import aboutImgThree from "../images/pngs/home-about-img3.png";
-import Facebook from "../images/svgs/facebook.svg"
-import Linkedin from "../images/svgs/linkedin.svg"
-import Instagram from "../images/svgs/instagram.svg"
-import Tiktok from "../images/svgs/tiktok.svg"
-import Dot from "../images/pngs/squared-dots.png"
+import Facebook from "../images/svgs/facebook.svg";
+import Linkedin from "../images/svgs/linkedin.svg";
+import Instagram from "../images/svgs/instagram.svg";
+import Tiktok from "../images/svgs/tiktok.svg";
+import Dot from "../images/pngs/squared-dots.png";
 import Card from "../components/Card.astro";
 
 const pressArticles = [
@@ -48,18 +48,30 @@ const pressArticles = [
 	<main>
 		<section id="home">
 			<div class="carousel-container">
-				<img width="215px" src={Dot} alt="" class="dots">
+				<img width="215px" src={Dot} alt="" class="dots" />
 				<div class="carousel-slide slide-one"></div>
 				<div class="carousel-slide slide-two"></div>
 			</div>
 			<div class="container">
 				<div class="home-content">
 					<div class="carousel-indicators">
-						<button aria-label="carousel button selector" type="button" class="gold"></button>
-						<button aria-label="carousel button selector" type="button" class="pink"></button>
-						<button aria-label="carousel button selector" type="button"></button>
-						<button aria-label="carousel button selector" type="button"></button>
-						<button aria-label="carousel button selector" type="button"></button>
+						<button
+							aria-label="carousel button selector"
+							type="button"
+							class="gold"></button>
+						<button
+							aria-label="carousel button selector"
+							type="button"
+							class="pink"></button>
+						<button
+							aria-label="carousel button selector"
+							type="button"></button>
+						<button
+							aria-label="carousel button selector"
+							type="button"></button>
+						<button
+							aria-label="carousel button selector"
+							type="button"></button>
 					</div>
 					<div class="home-texts">
 						<div>
@@ -74,16 +86,32 @@ const pressArticles = [
 					<div class="side-socials">
 						<p>follow me on:</p>
 						<div>
-							<a href="https://www.facebook.com/abisolakoladaisi">
-							<img width="20px" src={Facebook} alt="Facebook" />
+							<a href="https://m.facebook.com/abisola.ajimobi.5?mibextid=ZbWKwL&wtsid=rdr_0QUlYWFPcR3pAfyId" target="_blank">
+								<img
+									width="20px"
+									src={Facebook}
+									alt="Facebook"
+								/>
 							</a>
-							<a href="https://www.linkedin.com/in/abisola-kola-daisi-9b1b1b1b/">
-							<img width="20px" src={Linkedin} alt="Linkedin" />
+							<a
+								href="https://www.linkedin.com/in/abi-kola-daisi-104a827b" target="_blank"
+							>
+								<img
+									width="20px"
+									src={Linkedin}
+									alt="Linkedin"
+								/>
 							</a>
-							<a href="https://www.instagram.com/abi_kd/">
-								<img width="20px" src={Instagram} alt="Instagram" />
+							<a
+								href="https://instagram.com/abi_kd?igshid=MzRlODBiNWFlZA==" target="_blank"
+							>
+								<img
+									width="20px"
+									src={Instagram}
+									alt="Instagram"
+								/>
 							</a>
-							<a href="https://www.tiktok.com/@abi_kd?lang=en">
+							<a href="https://www.tiktok.com/@hello_akd?_t=8d9ytmhdl5y&_r=1" target="_blank">
 								<img width="20px" src={Tiktok} alt="Tiktok" />
 							</a>
 						</div>
@@ -172,9 +200,9 @@ const pressArticles = [
 	div.home-content {
 		height: 90vh;
 		display: flex;
-    justify-content: space-between;
-    align-items: end;
-	z-index: 5;
+		justify-content: space-between;
+		align-items: end;
+		z-index: 5;
 	}
 
 	.home-texts {
@@ -192,18 +220,18 @@ const pressArticles = [
 	h1 {
 		font-size: clamp(2.4rem, 9vw, 7rem);
 		font-weight: 700;
-		font-family: 'EB Garamond', sans-serif;
+		font-family: "EB Garamond", sans-serif;
 		line-height: 0.8;
 		margin-bottom: 3rem;
 	}
 
 	h1::after {
-		content: '';
+		content: "";
 		display: block;
 		width: 120px;
 		height: 6px;
 		border-radius: 4px;
-		background: #A69A85;
+		background: #a69a85;
 		margin: 1rem auto;
 		transition: all 0.8s ease-in-out;
 	}
@@ -226,7 +254,7 @@ const pressArticles = [
 	}
 
 	.mouse::before {
-		content: '';
+		content: "";
 		position: absolute;
 		width: 7px;
 		height: 7px;
@@ -275,11 +303,11 @@ const pressArticles = [
 	}
 
 	.slide-one {
-		background-image: url('../images/pngs/slide-1.png');
+		background-image: url("../images/pngs/slide-1.png");
 	}
 
 	.slide-two {
-		background-image: url('../images/pngs/slide-2.png');
+		background-image: url("../images/pngs/slide-2.png");
 	}
 
 	.carousel-slide.active {
@@ -317,12 +345,12 @@ const pressArticles = [
 
 	.carousel-indicators button.active {
 		border: 2px solid #565656;
-		background-color: #FBEEC1;
+		background-color: #fbeec1;
 		transition: all 0.25s ease;
 	}
 
 	.carousel-indicators button.pink.active {
-		background-color: #F989E3;
+		background-color: #f989e3;
 	}
 
 	.side-socials {
@@ -337,15 +365,15 @@ const pressArticles = [
 		font-weight: 600;
 		font-size: 1.2rem;
 		left: -157px;
-    	top: -11.2rem;
+		top: -11.2rem;
 		display: flex;
-    align-items: center;
-    justify-content: center;
-	width: 330px;
+		align-items: center;
+		justify-content: center;
+		width: 330px;
 	}
 
 	.side-socials p::after {
-		content: '';
+		content: "";
 		display: inline-block;
 		width: 150px;
 		height: 2px;
@@ -353,7 +381,8 @@ const pressArticles = [
 		margin-left: 0.8rem;
 	}
 
-	.side-socials p, .side-socials span {
+	.side-socials p,
+	.side-socials span {
 		transform: rotate(90deg);
 	}
 
@@ -488,15 +517,15 @@ const pressArticles = [
 
 		h1::after {
 			margin: 1.8rem auto 0;
-			background-color: #FBEEC1;
+			background-color: #fbeec1;
 		}
 
 		.slide-one {
-			background-image: url('../images/pngs/slide-1-mobile.png');
+			background-image: url("../images/pngs/slide-1-mobile.png");
 		}
 
 		.slide-two {
-			background-image: url('../images/pngs/slide-2-mobile.png');
+			background-image: url("../images/pngs/slide-2-mobile.png");
 		}
 
 		.dots {
@@ -555,7 +584,7 @@ const pressArticles = [
 		}
 
 		h1.white::after {
-			background-color: #A69A85;
+			background-color: #a69a85;
 		}
 
 		.home-texts p {
@@ -563,8 +592,8 @@ const pressArticles = [
 		}
 
 		.side-socials {
-		transform: translateY(-35px);
-	}
+			transform: translateY(-35px);
+		}
 
 		.side-socials p {
 			top: -8.2rem;
@@ -585,6 +614,10 @@ const pressArticles = [
 		.carousel-indicators {
 			transform: translateY(-20px);
 		}
+
+		#about-section {
+			padding-top: 1rem;
+		}
 	}
 </style>
 
@@ -597,8 +630,8 @@ const pressArticles = [
 	function showSlide(index) {
 		slideImages.forEach((img, i) => {
 			img.classList.toggle("active", i === index);
-			const h1 = document.querySelector('h1').classList
-			if(index == '0') {
+			const h1 = document.querySelector("h1").classList;
+			if (index == "0") {
 				h1.remove("white");
 			} else {
 				h1.add("white");

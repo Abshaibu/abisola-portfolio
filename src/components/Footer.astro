@@ -1,49 +1,67 @@
 ---
-import logoDark from "../images/pngs/logo-dark.png"
-import Facebook from "../images/svgs/facebook.svg"
-import Linkedin from "../images/svgs/linkedin.svg"
-import Instagram from "../images/svgs/instagram.svg"
-import Tiktok from "../images/svgs/tiktok.svg"
+import logoDark from "../images/pngs/logo-dark.png";
+import Facebook from "../images/svgs/facebook.svg";
+import Linkedin from "../images/svgs/linkedin.svg";
+import Instagram from "../images/svgs/instagram.svg";
+import Tiktok from "../images/svgs/tiktok.svg";
 ---
 
 <footer class="text">
     <div class="container">
-            <div class="footer-nav">
-                <div class="logo">
-                    <a href="/">
-                        <img src={logoDark} alt="Abisola's logo" />
-                    </a>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a class="nav-link" href="/">Home</a></li>
-                        <li><a class="nav-link" href="/about-me">About me</a></li>
-                        <li><a class="nav-link" href="/press">Press</a></li>
-                        <li><a class="nav-link" href="/contact-me">Contact me</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="socials">
-                <a href="https://www.facebook.com/AbisolaKolaDaisi/" target="_blank" rel="noopener noreferrer">
-                    <img width="20px" src={Facebook} alt="Facebook" />
-                </a>
-                <a href="https://www.linkedin.com/in/abisola-kola-daisi-0b0b1b1b/" target="_blank" rel="noopener noreferrer">
-                    <img width="20px" src={Linkedin} alt="Linkedin" />
-                </a>
-                <a href="https://www.instagram.com/abi_kd/" target="_blank" rel="noopener noreferrer">
-                    <img width="20px" src={Instagram} alt="Instagram" />
-                </a>
-                <a href="https://www.tiktok.com/@abi_kd" target="_blank" rel="noopener noreferrer">
-                    <img width="20px" src={Tiktok} alt="Tiktok" />
+        <div class="footer-nav">
+            <div class="logo">
+                <a href="/">
+                    <img src={logoDark} alt="Abisola's logo" />
                 </a>
             </div>
-            <small>@Copyright Abisola Kola-Daisi</small>
+            <nav>
+                <ul>
+                    <li><a class="nav-link" href="/">Home</a></li>
+                    <li><a class="nav-link" href="/about-me">About me</a></li>
+                    <li><a class="nav-link" href="/press">Press</a></li>
+                    <li>
+                        <a class="nav-link" href="/contact-me">Contact me</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="socials">
+            <a
+                href="https://m.facebook.com/abisola.ajimobi.5?mibextid=ZbWKwL&wtsid=rdr_0QUlYWFPcR3pAfyId"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img width="20px" src={Facebook} alt="Facebook" />
+            </a>
+            <a
+                href="https://www.linkedin.com/in/abi-kola-daisi-104a827b"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img width="20px" src={Linkedin} alt="Linkedin" />
+            </a>
+            <a
+                href="https://instagram.com/abi_kd?igshid=MzRlODBiNWFlZA=="
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img width="20px" src={Instagram} alt="Instagram" />
+            </a>
+            <a
+                href="https://www.tiktok.com/@hello_akd?_t=8d9ytmhdl5y&_r=1"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img width="20px" src={Tiktok} alt="Tiktok" />
+            </a>
+        </div>
+        <small>@Copyright Abisola Kola-Daisi</small>
     </div>
 </footer>
 
 <style>
-
-    footer, .footer-nav {
+    footer,
+    .footer-nav {
         display: flex;
         align-items: center;
     }
@@ -87,26 +105,27 @@ import Tiktok from "../images/svgs/tiktok.svg"
     }
 
     @media screen and (max-width: 767px) {
-    .footer-nav {
-        flex-direction: column;
-        align-items: center;
-    }
+        .footer-nav {
+            flex-direction: column;
+            align-items: center;
+        }
 
-    .logo {
-        order: 1;
-    }
+        .logo {
+            order: 1;
+        }
 
-    div.logo img {
-        width: 200px;
-    }
+        div.logo img {
+            width: 200px;
+        }
 
-    .socials, small {
-        width: max-content;
-        margin: 0 auto;
-    }
+        .socials,
+        small {
+            width: max-content;
+            margin: 0 auto;
+        }
 
-    .socials {
-        margin: 1rem auto 1.5rem;
+        .socials {
+            margin: 1rem auto 1.5rem;
+        }
     }
-}
 </style>
