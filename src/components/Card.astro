@@ -25,12 +25,9 @@ const { href, title, body, author, date, img, yearsPassed, textColor, mobileBody
 		<div class="article-details"><h4>{title}</h4>
 		<p>{body}</p>
 		<p class="publish-details"><span>By {author}</span><span>{yearsPassed? '' : 'On'} {date}</span></p>
-		<a href={href}>read now</a></div>
+		<a href={href} target="_blank">read now</a></div>
 	</div>
 <style>
-	div.article-card-mobile {
-		display: none;
-	}
 
 	div.article-card {
 		padding: 1rem;
