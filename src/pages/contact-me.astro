@@ -316,7 +316,6 @@ import contactMeImageMobile from "../images/pngs/contact-me-mobile.png";
             const value = input.value.trim();
 
             if (value === "") {
-                console.log(`Input field with id '${id}' is empty.`);
                 input.parentElement.classList.add("empty");
                 form.classList.add("error");
             } else {
@@ -325,7 +324,6 @@ import contactMeImageMobile from "../images/pngs/contact-me-mobile.png";
         });
 
         if (Object.keys(formData).length === allInputs.length) {
-            console.log(formData);
             form.classList.add("submitted");
             form.reset();
         textarea.style.height = "31px";
@@ -362,14 +360,4 @@ import contactMeImageMobile from "../images/pngs/contact-me-mobile.png";
     });
 
     resizeTextarea();
-
-    const navLinks = document.querySelectorAll('.nav-item');
-			const currentUrl = window.location.href;
-			navLinks.forEach((link) => {
-				if (link.href == currentUrl) {
-				link.classList.add('active');
-				} else {
-				link.classList.remove('active');
-				}
-			});
 </script>

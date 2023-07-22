@@ -688,14 +688,4 @@ const pressArticles = [
 	});
 
 	setInterval(nextSlide, 6000);
-
-	const navLinks = document.querySelectorAll('.nav-item');
-			const currentUrl = window.location.href;
-			navLinks.forEach((link) => {
-				if (link.href == currentUrl) {
-				link.classList.add('active');
-				} else {
-				link.classList.remove('active');
-				}
-			});
 </script>
