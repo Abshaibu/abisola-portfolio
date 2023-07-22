@@ -136,17 +136,11 @@ import contactMeImageMobile from "../images/pngs/contact-me-mobile.png";
     }
 
     button.submit-btn {
-        border-color: #676767;
+        border-color: #338683;
         color: #3a3a3a;
         background-color: #fff;
         pointer-events: none;
         display: none;
-    }
-
-    button.submit-btn:hover {
-        background-color: #fff;
-        color: #3a3a3a;
-        border-color: #676767;
     }
 
     form.submitted button.submit-btn {
@@ -233,15 +227,15 @@ import contactMeImageMobile from "../images/pngs/contact-me-mobile.png";
         padding: 0.8rem 0;
         border: 2px solid transparent;
         outline: none;
-        background-color: #ccbea3;
+        background-color: #F37125;
         color: #fff;
         transition: all 0.25s ease-in-out;
     }
 
     button:hover {
         background-color: #fff;
-        color: #ccbea3;
-        border-color: #ccbea3;
+        color: #F37125;
+        border-color: #F37125;
     }
 
     @media screen and (max-width: 1023px) {
@@ -368,4 +362,17 @@ import contactMeImageMobile from "../images/pngs/contact-me-mobile.png";
     });
 
     resizeTextarea();
+
+    const navLinks = document.querySelectorAll('.nav-item');
+			const setCurrentNavLink = () => {
+			const currentUrl = window.location.href;
+			navLinks.forEach((link) => {
+				if (link.href == currentUrl) {
+				link.classList.add('active');
+				} else {
+				link.classList.remove('active');
+				}
+			});
+			};
+			document.addEventListener('DOMContentLoaded', setCurrentNavLink);
 </script>

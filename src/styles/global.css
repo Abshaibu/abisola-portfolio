@@ -45,7 +45,7 @@ a {
     text-decoration: none;
     font-weight: 600;
     color: #373737;
-    transition: all 0.25s ease-out;
+    transition: all 0.25s ease-in-out;
 }
 
 header li a::after, footer li a::after {
@@ -58,16 +58,16 @@ header li a::after, footer li a::after {
     height: 3px;
     border-radius: 3px;
     background-color: transparent;
-    transition: all 0.25s ease-out;
+    transition: all 0.25s ease-in-out;
 }
 
 a.active::after {
     width: 100%;
-    background-color: #373737;
+    background-color: #F37125;
 }
 
 header a:hover::after, footer a:hover::after {
-    background-color: #373737;
+    background-color: #F37125;
     width: 100%;
 }
 
