@@ -24,9 +24,8 @@ const { title } = Astro.props;
 		<slot />
 		<Footer />
 
-		<!-- <script>
+		<script>
 		    const navLinks = document.querySelectorAll('.nav-item');
-			const setCurrentNavLink = () => {
 			const currentUrl = window.location.href;
 			navLinks.forEach((link) => {
 				if (link.href == currentUrl) {
@@ -35,8 +34,6 @@ const { title } = Astro.props;
 				link.classList.remove('active');
 				}
 			});
-			};
-			document.addEventListener('DOMContentLoaded', setCurrentNavLink);
-		</script> -->
+		</script>
 	</body>
 </html>
