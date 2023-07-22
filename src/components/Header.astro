@@ -200,7 +200,6 @@ import closeBtn from "../images/svgs/close-btn.svg"
 
 <script>
     const navLinks = document.querySelectorAll('.nav-item');
-			const setCurrentNavLink = () => {
 			const currentUrl = window.location.href;
 			navLinks.forEach((link) => {
 				if (link.href == currentUrl) {
@@ -209,8 +208,6 @@ import closeBtn from "../images/svgs/close-btn.svg"
 				link.classList.remove('active');
 				}
 			});
-			};
-			document.addEventListener('DOMContentLoaded', setCurrentNavLink);
 
     document.querySelector(".menu-btn").addEventListener('click', () => {
         document.querySelector(".mobile-nav").classList.add("show");
