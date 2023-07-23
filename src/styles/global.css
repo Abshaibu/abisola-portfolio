@@ -61,7 +61,7 @@ header li a::after, footer li a::after {
     transition: all 0.25s ease-in-out;
 }
 
-a.active::after {
+a.active::after, a.is-active::after {
     width: 100%;
     background-color: #F37125;
 }
