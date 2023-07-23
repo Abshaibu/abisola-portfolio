@@ -328,13 +328,11 @@ import contactMeImageMobile from "../images/pngs/contact-me-mobile.png";
       })
         .then((response) => {
           if (response.status === 200) {
-            console.log("success");
     sendBtn.style.pointerEvents = "auto";
             form.classList.add("submitted");
       form.reset();
       textarea.style.height = "31px";
           } else {
-            console.log("fail");
           }
         })
         .catch((error) => console.log(error));
