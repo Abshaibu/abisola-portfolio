@@ -1,117 +1,148 @@
 ---
+import pressImgOne from "../images/pngs/press-img1.png";
+import pressImgTwo from "../images/pngs/press-img2.png";
+import pressImgThree from "../images/pngs/press-img3.png";
+import pressImgFour from "../images/pngs/press-img4.png";
+import pressImgFive from "../images/pngs/press-img5.png";
+import pressImgSix from "../images/pngs/press-img6.png";
 export interface Props {
-	title: string;
-	body: string;
-	mobileBody: string;
-	yearsPassed?: boolean;
-	href: string;
-	author: string;
-	date: string;
-	img: string;
-	textColor: string;
+  title: string;
+  body: string;
+  mobileBody: string;
+  yearsPassed?: boolean;
+  href: string;
+  author: string;
+  date: string;
+  img: string;
+  textColor: string;
 }
-const { href, title, body, author, date, img, yearsPassed, textColor, mobileBody } = Astro.props;
+const {
+  href,
+  title,
+  body,
+  author,
+  date,
+  img,
+  yearsPassed,
+  textColor,
+  mobileBody,
+} = Astro.props;
 ---
 
-
-	<div class=`article-card ${textColor}`>
-		<img src={`../images/pngs/press-${img}.png`} alt="press article cover image" />
-		<div class="article-details"><h4>{title}</h4>
-		<p>{body}</p>
-		<p class="publish-details"><span>By {author}</span><span>{yearsPassed? '' : 'On'} {date}</span></p>
-		<a href={href} target="_blank">read now</a></div>
-	</div>
+<div class=`article-card ${textColor}`>
+  <img
+    src={img == "img1"
+      ? pressImgOne
+      : img == "img2"
+      ? pressImgTwo
+      : img == "img3"
+      ? pressImgThree
+      : img == "img4"
+      ? pressImgFour
+      : img == "img5"
+      ? pressImgFive
+      : pressImgSix}
+    alt="press article cover image"
+  />
+  <div class="article-details">
+    <h4>{title}</h4>
+    <p>{body}</p>
+    <p class="publish-details">
+      <span>By {author}</span><span>{yearsPassed ? "" : "On"} {date}</span>
+    </p>
+    <a href={href} target="_blank">read now</a>
+  </div>
+</div>
 <style>
+  div.article-card {
+    padding: 1rem;
+    width: 30%;
+    min-width: 320px;
+    border: 3px solid transparent;
+    transition: border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
 
-	div.article-card {
-		padding: 1rem;
-		width: 30%;
-		min-width: 320px;
-		border: 3px solid transparent;
-		transition: border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1);
-	}
+  div.white {
+    color: #fff;
+  }
 
-	div.white {
-		color: #ffffff;
-	}
+  div.redwine {
+    color: #2e2e2e;
+  }
 
-	div.redwine {
-		color: #2e2e2e;
-	}
+  div.article-card:hover {
+    border-color: #fff;
+    cursor: pointer;
+  }
 
-	div.article-card:hover {
-		border-color: #fff;
-		cursor: pointer;
-	}
+  div.article-card.redwine:hover {
+    border-color: #f37125;
+    cursor: pointer;
+  }
 
-	div.article-card.redwine:hover {
-		border-color: #F37125;
-		cursor: pointer;
-	}
+  a {
+    padding: 0.5rem 1rem;
+    background-color: #f37125;
+    color: #fff;
+    border: 2px solid #f37125;
+    text-transform: capitalize;
+    font-weight: 600;
+    opacity: 1;
+    transition: all 0.25 ease-in-out;
+  }
 
-	a {
-		padding: 0.5rem 1rem;
-		background-color: #F37125;
-		color: #fff;
-		border: 2px solid #F37125;
-		text-transform: capitalize;
-		font-weight: 600;
-		opacity: 1;
-		transition: all 0.25 ease-in-out;
-	}
+  div.article-card:hover a {
+    opacity: 1;
+  }
 
-	div.article-card:hover a {
-		opacity: 1;
-	}
+  div.article-card:hover a:hover {
+    background-color: #fff;
+    color: #f37125;
+  }
 
-	div.article-card:hover a:hover {
-		background-color: #fff;
-		color: #F37125;
-	}
+  div.article-card.redwine:hover a {
+    border-color: #f37125;
+  }
 
-	div.article-card.redwine:hover a {
-		border-color: #F37125;
-	}
+  div.article-card.redwine:hover a:hover {
+    border-color: #f37125;
+  }
 
-	div.article-card.redwine:hover a:hover {
-		border-color: #F37125;
-	}
+  .white a:hover {
+    border-color: #fff;
+  }
 
-	.white a:hover {
-		border-color: #fff;
-	}
+  h4 {
+    margin: 0.8rem 0 0.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
 
-	h4 {
-		margin: 0.8rem 0 0.5rem;
-		font-weight: 700;
-		font-size: 1rem;
-	}
-	p {
-		font-size: 0.9rem;
-	}
+  .publish-details {
+    display: flex;
+    margin: 0.8rem 0 1.5rem;
+    font-weight: 600;
+    font-size: 0.8rem !important;
+    justify-content: space-between;
+  }
 
-	.publish-details {
-		display: flex;
-		margin: 0.8rem 0 1.5rem;
-		font-weight: 600;
-		font-size: 0.8rem !important;
-		justify-content: space-between;
-	}
+  @media screen and (max-width: 1171px) {
+    div.article-card {
+      display: flex;
+      height: 350px;
+      width: 100%;
+      gap: 2rem;
+    }
+  }
 
-	@media screen and (max-width: 1171px) {
-        div.article-card {
-            display: flex;
-			height: 350px;
-			width: 100%;
-			gap: 2rem;
-        }
-	}
-
-	@media screen and (max-width: 1050px) {
-		div.article-card {
-			display: block;
-			height: auto;
-			width: 30%;
-		}
-	}
+  @media screen and (max-width: 1050px) {
+    div.article-card {
+      display: block;
+      height: auto;
+      width: 30%;
+    }
+  }
 </style>
