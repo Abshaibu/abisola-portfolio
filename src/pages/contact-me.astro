@@ -5,359 +5,368 @@ import contactMeImageMobile from "../images/pngs/contact-me-mobile.png";
 ---
 
 <Layout title="Abisola | Contact Me">
-    <main>
-        <section>
-            <div class="img-wrapper">
-                <img class="contact-me" src={contactMeImage} alt="contact me image" />
+  <main>
+    <section>
+      <div class="img-wrapper">
+        <img class="contact-me" src={contactMeImage} alt="contact me image" />
+      </div>
+      <div class="form-wrapper">
+        <h1>Get in touch</h1>
+        <form action="https://usebasin.com/f/3d86d8ee45a7" method="POST" id="form">
+          <div class="split">
+            <div class="form-group">
+              <label for="first_name"
+                >first name <span class="asterisks">*</span></label
+              >
+              <input
+                class="input-field"
+                type="text"
+                name="first_name"
+                placeholder="First Name"
+                id="first_name"
+              />
             </div>
-            <div class="form-wrapper">
-                <h1>Get in touch</h1>
-                <form action="">
-                    <div class="split">
-                        <div class="form-group">
-                            <label for="fname"
-                                >first name <span class="asterisks">*</span
-                                ></label
-                            >
-                            <input
-                                class="input-field"
-                                type="text"
-                                name="fname"
-                                placeholder="First Name"
-                                id="fname"
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label for="lname"
-                                >last name <span class="asterisks">*</span
-                                ></label
-                            >
-                            <input
-                                class="input-field"
-                                type="text"
-                                name="lname"
-                                placeholder="Last Name"
-                                id="lname"
-                            />
-                        </div>
-                    </div>
-                    <div class="split">
-                        <div class="form-group">
-                            <label for="email"
-                                >Email Address <span class="asterisks">*</span
-                                ></label
-                            >
-                            <input
-                                class="input-field"
-                                type="email"
-                                name="email"
-                                placeholder="Enter your email address"
-                                id="email"
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label for="phone"
-                                >phone number <span class="asterisks">*</span
-                                ></label
-                            >
-                            <input
-                                class="input-field"
-                                type="text"
-                                name="phone"
-                                placeholder="Enter your phone number"
-                                id="phone"
-                            />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message"
-                            >Message <span class="asterisks">*</span></label
-                        >
-                        <textarea
-                            class="input-field"
-                            name="message"
-                            id="message"
-                            placeholder="Enter your message"></textarea>
-                    </div>
-                    <p class="asterisks">
-                        Input fields cannot be blank <span>*</span>
-                    </p>
-                    <button type="submit">Submit</button>
-                    <button disabled class="submit-btn" type="submit"
-                        >Submitted!</button
-                    >
-                </form>
+            <div class="form-group">
+              <label for="last_name"
+                >last name <span class="asterisks">*</span></label
+              >
+              <input
+                class="input-field"
+                type="text"
+                name="last_name"
+                placeholder="Last Name"
+                id="last_name"
+              />
             </div>
-        </section>
-    </main>
+          </div>
+          <div class="split">
+            <div class="form-group">
+              <label for="email"
+                >Email Address <span class="asterisks">*</span></label
+              >
+              <input
+                class="input-field"
+                type="email"
+                name="email"
+                placeholder="Enter your email address"
+                id="email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone"
+                >phone number <span class="asterisks">*</span></label
+              >
+              <input
+                class="input-field"
+                type="text"
+                name="phone"
+                placeholder="Enter your phone number"
+                id="phone"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message <span class="asterisks">*</span></label
+            >
+            <textarea
+              class="input-field"
+              name="message"
+              id="message"
+              placeholder="Enter your message"></textarea>
+          </div>
+          <p class="asterisks">
+            Input fields cannot be blank <span>*</span>
+          </p>
+          <button type="submit" class="send-btn">Submit</button>
+          <button disabled class="submit-btn" type="button">Submitted!</button>
+        </form>
+      </div>
+    </section>
+  </main>
 </Layout>
 
 <style>
-    section {
-        min-height: 100vh;
-        display: grid;
-        grid-template-columns: 52% 48%;
-    }
+  section {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 52% 48%;
+  }
 
-    div.img-wrapper {
-        background-image: url('../images/pngs/contact-me-img.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 100%;
-    }
+  div.img-wrapper {
+    background-image: url("../images/pngs/contact-me-img.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+  }
 
-    .img-wrapper img {
-        display: none;
-    }
+  .img-wrapper img {
+    display: none;
+  }
 
-    .form-wrapper {
-        max-width: 100%;
-        padding-right: 11%;
-    }
+  .form-wrapper {
+    max-width: 100%;
+    padding-right: 11%;
+  }
 
-    .asterisks,
-    p {
-        color: rgb(239, 71, 41);
-        opacity: 0;
-    }
+  .asterisks,
+  p {
+    color: rgb(239, 71, 41);
+    opacity: 0;
+  }
 
-    p {
-        padding-top: 0.5rem;
-    }
+  p {
+    padding-top: 0.5rem;
+  }
 
-    .empty .asterisks,
-    .error p {
-        opacity: 1;
-    }
+  .empty .asterisks,
+  .error p {
+    opacity: 1;
+  }
 
-    form.submitted button {
-        display: none;
-    }
+  form.submitted button {
+    display: none;
+  }
 
-    button.submit-btn {
-        border-color: #338683;
-        color: #3a3a3a;
-        background-color: #fff;
-        pointer-events: none;
-        display: none;
-    }
+  button.submit-btn {
+    border-color: #338683;
+    color: #3a3a3a;
+    background-color: #fff;
+    pointer-events: none;
+    display: none;
+  }
 
-    form.submitted button.submit-btn {
-        display: block;
-    }
+  form.submitted button.submit-btn {
+    display: block;
+  }
 
-    div.form-wrapper {
-        padding-left: 3rem;
-        color: #404040;
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-        flex-direction: column;
-    }
+  div.form-wrapper {
+    padding-left: 3rem;
+    color: #404040;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-    h1 {
-        font-family: "EB Garamond", sans-serif;
-        font-size: 2rem;
-    }
+  h1 {
+    font-family: "EB Garamond", sans-serif;
+    font-size: 2rem;
+  }
 
-    form input,
-    textarea {
-        font-family: "SF UI Display", sans-serif;
-        font-weight: 600;
-        display: block;
-        font-size: 1rem;
-        width: 100%;
-        border: none;
-        outline: none;
-        padding: 0.3rem 0;
-        border-bottom: 2px solid #2c2c2c;
-        transition: all 0.25s ease-in-out;
-    }
+  form input,
+  textarea {
+    font-family: "SF UI Display", sans-serif;
+    font-weight: 600;
+    display: block;
+    font-size: 1rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0.3rem 0;
+    border-bottom: 2px solid #2c2c2c;
+    transition: all 0.25s ease-in-out;
+  }
 
-    form input:focus,
-    textarea:focus {
-        border-color: #ccbea3;
-    }
+  form input:focus,
+  textarea:focus {
+    border-color: #ccbea3;
+  }
 
-    textarea {
-        resize: none;
-        resize: none;
-        overflow: auto;
-        height: 31px;
-        min-height: 31px;
-        max-height: 200px;
-        width: 100%;
-    }
+  textarea {
+    resize: none;
+    resize: none;
+    overflow: auto;
+    height: 31px;
+    min-height: 31px;
+    max-height: 200px;
+    width: 100%;
+  }
 
-    input::placeholder,
-    textarea::placeholder {
-        font-family: "SF UI Display", sans-serif;
-        font-weight: 500;
-        color: #40404083;
-    }
+  input::placeholder,
+  textarea::placeholder {
+    font-family: "SF UI Display", sans-serif;
+    font-weight: 500;
+    color: #40404083;
+  }
 
-    label {
-        font-family: "SF UI Display", sans-serif;
-        font-weight: 700;
-        font-size: 1rem;
-        text-transform: uppercase;
-        margin-bottom: 0.5rem;
-        display: block;
-    }
+  label {
+    font-family: "SF UI Display", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
 
+  div.split {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 12%;
+  }
+
+  div.split div {
+    width: 100%;
+  }
+
+  button {
+    font-family: "SF UI Display", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    width: 152px;
+    padding: 0.8rem 0;
+    border: 2px solid transparent;
+    outline: none;
+    background-color: #f37125;
+    color: #fff;
+    transition: all 0.25s ease-in-out;
+  }
+
+  button:hover {
+    background-color: #fff;
+    color: #f37125;
+    border-color: #f37125;
+  }
+
+  @media screen and (max-width: 1023px) {
     div.split {
-        margin-bottom: 1rem;
-        display: flex;
-        justify-content: space-between;
-        gap: 12%;
+      display: block;
     }
 
     div.split div {
-        width: 100%;
+      margin-bottom: 1rem;
     }
 
-    button {
-        font-family: "SF UI Display", sans-serif;
-        font-weight: 700;
-        font-size: 1rem;
-        border-radius: 10px;
-        margin-top: 2rem;
-        width: 152px;
-        padding: 0.8rem 0;
-        border: 2px solid transparent;
-        outline: none;
-        background-color: #F37125;
-        color: #fff;
-        transition: all 0.25s ease-in-out;
+    h1 {
+      margin-top: 3rem;
     }
 
-    button:hover {
-        background-color: #fff;
-        color: #F37125;
-        border-color: #F37125;
+    section div.form-wrapper {
+      width: 90%;
+      margin: 0 auto;
+      padding: 0;
     }
 
-    @media screen and (max-width: 1023px) {
+    div.split {
+      gap: 9%;
+    }
+  }
 
-        div.split {
-            display: block;
-        }
+  @media screen and (max-width: 767px) {
+    div.img-wrapper {
+      background-position: 77% center;
+    }
+  }
 
-        div.split div {
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            margin-top: 3rem;
-        }
-
-        section div.form-wrapper {
-            width: 90%;
-            margin: 0 auto;
-            padding: 0;
-        }
-
-        div.split {
-            gap: 9%;
-        }
+  @media screen and (max-width: 590px) {
+    section,
+    img.contact-me {
+      display: block;
     }
 
-    @media screen and (max-width: 767px) {
-        div.img-wrapper {
-            background-position: 77% center;
-        }
+    div.form-wrapper {
+      padding-bottom: 4rem !important;
     }
 
-    @media screen and (max-width: 590px) {
-        section, img.contact-me {
-            display: block;
-        }
+    div.img-wrapper {
+      background: none;
+    }
+  }
 
-        div.form-wrapper {
-            padding-bottom: 4rem !important;
-        }
-
-        div.img-wrapper {
-            background: none;
-        }
+  @media screen and (max-width: 426px) {
+    section div.split {
+      flex-direction: column;
+      margin-bottom: 0;
     }
 
-    @media screen and (max-width: 426px) {
-        section div.split {
-            flex-direction: column;
-            margin-bottom: 0;
-        }
-
-
-        div.split div {
-            margin-bottom: 1rem;
-        }
-        h1 {
-            text-align: center;
-        }
-
-        input {
-            margin: 0.5rem 0;
-        }
+    div.split div {
+      margin-bottom: 1rem;
     }
+    h1 {
+      text-align: center;
+    }
+
+    input {
+      margin: 0.5rem 0;
+    }
+  }
 </style>
 
 <script>
-    const allInputs = document.querySelectorAll(".input-field");
-    const form = document.querySelector("form");
+  const allInputs = document.querySelectorAll(".input-field");
+  const form = document.querySelector("form");
 
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const sendBtn = document.querySelector(".send-btn");
+    const formData = new FormData(form);
 
-        const formData = {};
-        allInputs.forEach((input) => {
-            const id = input.id;
-            const value = input.value.trim();
-
-            if (value === "") {
-                input.parentElement.classList.add("empty");
-                form.classList.add("error");
-            } else {
-                formData[id] = value;
-            }
-        });
-
-        if (Object.keys(formData).length === allInputs.length) {
-            form.classList.add("submitted");
-            form.reset();
-        textarea.style.height = "31px";
-        }
-    });
-
+    const formInputs = {};
     allInputs.forEach((input) => {
-        input.addEventListener("focus", () => {
-            form.classList.remove("submitted", "error");
-            input.parentElement.classList.remove("empty");
-        });
+      const id = input.id;
+      const value = input.value.trim();
+
+      if (value === "") {
+        input.parentElement.classList.add("empty");
+        form.classList.add("error");
+      } else {
+        formInputs[id] = value;
+      }
     });
 
-    const textarea = document.getElementById("message");
-    function resizeTextarea() {
-        textarea.style.height = "31px";
-        textarea.style.height = `${textarea.scrollHeight}px`;
+    if (Object.keys(formInputs).length === allInputs.length) {
+    sendBtn.style.pointerEvents = "none";
+      fetch("https://usebasin.com/f/3d86d8ee45a7", {
+        method: "POST",
+        headers: {
+        Accept: "application/json",
+        },
+        body: formData,
+      })
+        .then((response) => {
+          if (response.status === 200) {
+    sendBtn.style.pointerEvents = "auto";
+            form.classList.add("submitted");
+      form.reset();
+      textarea.style.height = "31px";
+          } else {
+          }
+        })
+        .catch((error) => console.log(error));
     }
+  });
 
-    function handleInputEvent() {
-        resizeTextarea();
-    }
-
-    textarea.addEventListener("input", handleInputEvent);
-    window.addEventListener("resize", resizeTextarea);
-
-    textarea.addEventListener("input", resizeTextarea);
-    window.addEventListener("resize", resizeTextarea);
-    textarea.addEventListener("blur", () => {
-        if (textarea.value === "") {
-            textarea.style.height = "31px";
-        } else {
-        }
+  allInputs.forEach((input) => {
+    input.addEventListener("focus", () => {
+      form.classList.remove("submitted", "error");
+      input.parentElement.classList.remove("empty");
     });
+  });
 
+  const textarea = document.getElementById("message");
+  function resizeTextarea() {
+    textarea.style.height = "31px";
+    textarea.style.height = `${textarea.scrollHeight}px`;
+  }
+
+  function handleInputEvent() {
     resizeTextarea();
+  }
+
+  textarea.addEventListener("input", handleInputEvent);
+  window.addEventListener("resize", resizeTextarea);
+
+  textarea.addEventListener("input", resizeTextarea);
+  window.addEventListener("resize", resizeTextarea);
+  textarea.addEventListener("blur", () => {
+    if (textarea.value === "") {
+      textarea.style.height = "31px";
+    } else {
+    }
+  });
+
+  resizeTextarea();
 </script>
