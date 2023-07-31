@@ -1,5 +1,5 @@
 ---
-import pressImgOne from "../images/pngs/press-img1.png";
+import pressImgOne from "../images/pngs/about-me-img.png";
 import pressImgTwo from "../images/pngs/press-img2.png";
 import pressImgThree from "../images/pngs/press-img3.png";
 import pressImgFour from "../images/pngs/press-img4.png";
@@ -8,7 +8,6 @@ import pressImgSix from "../images/pngs/press-img6.png";
 export interface Props {
   title: string;
   body: string;
-  mobileBody: string;
   yearsPassed?: boolean;
   href: string;
   author: string;
@@ -25,25 +24,26 @@ const {
   img,
   yearsPassed,
   textColor,
-  mobileBody,
 } = Astro.props;
 ---
 
 <div class=`article-card ${textColor}`>
-  <img
-    src={img == "img1"
-      ? pressImgOne
-      : img == "img2"
-      ? pressImgTwo
-      : img == "img3"
-      ? pressImgThree
-      : img == "img4"
-      ? pressImgFour
-      : img == "img5"
-      ? pressImgFive
-      : pressImgSix}
-    alt="press article cover image"
-  />
+  <div class="article-img"> 
+    <img
+      src={img == "img1"
+        ? pressImgOne
+        : img == "img2"
+        ? pressImgTwo
+        : img == "img3"
+        ? pressImgThree
+        : img == "img4"
+        ? pressImgFour
+        : img == "img5"
+        ? pressImgFive
+        : pressImgSix}
+      alt="press article cover image"
+    />
+  </div>
   <div class="article-details">
     <h4>{title}</h4>
     <p>{body}</p>
@@ -78,6 +78,16 @@ const {
   div.article-card.redwine:hover {
     border-color: #f37125;
     cursor: pointer;
+  }
+
+  div.article-img {
+    height: 274px;
+  }
+
+  div.article-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
   a {
